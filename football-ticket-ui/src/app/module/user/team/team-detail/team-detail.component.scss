@@ -1,0 +1,34 @@
+.table-5 {
+  img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+  }
+
+  thead th, tr td {
+    border-bottom: 1px solid #dee2e6;
+
+    &:nth-child(1) {
+      width: 10%;
+    }
+
+    &:nth-child(2) {
+      width: 15%;
+    }
+
+    &:nth-child(3) {
+      width: 65%;
+    }
+
+    &:nth-child(4) {
+      width: 10%;
+    }
+  }
+}
+
+
+.sportsmagazine-overview-team-one,
+.sportsmagazine-overview-team-two,
+.sportsmagazine-overview-score {
+  flex: 1;
+}

@@ -1,0 +1,75 @@
+<div class="sportsmagazine-main-section sportsmagazine-wishlist-full">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sportsmagazine-wishlist">
+          <h4>History booking ({{ histories.totalRecords }})</h4>
+          <div class="sportsmagazine-wishlist-graph">
+            <table class="table table-striped table-hover table-main">
+              <thead>
+              <tr>
+                <th>No</th>
+                <th>Order Ref</th>
+                <th>Type</th>
+                <th>Match</th>
+                <th>Time</th>
+                <th>Price</th>
+                <th>Seats</th>
+                <th>Status</th>
+                <th>Payment method</th>
+              </tr>
+              </thead>
+              <tbody>
+                @for (data of histories.contents; track data; let idx = $index) {
+                  <tr>
+                    <td>{{ (histories.size * (histories.page - 1)) + idx + 1 }}</td>
+                    <td>{{ data.txnRef }}</td>
+                    <td>{{ data.ticketType }}</td>
+                    <td>
+                      <table class="border-none m-0 table-child">
+                        <tr>
+                          <td>
+                            <img [src]="data.homeLogo" alt="team-logo" class="team-logo">
+                          </td>
+                          <td>{{ data.teamMatch }}</td>
+                          <td>
+                            <img [src]="data.awayLogo" alt="team-logo" class="team-logo">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td>{{ data.matchTime }}</td>
+                    <td>{{ data.totalPrice | currency: 'VND' }}</td>
+                    <td>{{ data.seats }}</td>
+                    <td>
+                      @if (data.bookingStatus === 'completed') {
+                        <span class="badge badge-success">Success</span>
+                      } @else if (data.bookingStatus === 'cancelled') {
+                        <span class="badge badge-danger">Failed</span>
+                      } @else if (data.bookingStatus === 'pending') {
+                        <span class="badge badge-warning">Pending</span>
+                      }
+                    </td>
+                    <td>
+                      {{ data.paymentMethod }}
+                    </td>
+                  </tr>
+                } @empty {
+                  <tr>
+                    <td colspan="9" class="text-center">No records found.</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <pagination [totalItems]="histories.totalRecords"
+                        [(ngModel)]="histories.page"
+                        [itemsPerPage]="histories.size" [maxSize]="5"
+                        [boundaryLinks]="true" [rotate]="true" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

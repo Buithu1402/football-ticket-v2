@@ -1,0 +1,171 @@
+<div class="sportsmagazine-main-section sportsmagazine-thumb sportsmagazine-fixture-thumb">
+  <span class="thumb-transparent"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="sportsmagazine-thumb-team-one">
+          <figure><img [src]="matchDetail.homeLogo" alt=""></figure>
+          <section>
+            <h4>{{ matchDetail.homeTeam }}</h4>
+          </section>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="sportmagazine-score-counter">
+          <h4>{{ matchDetail.homeTeam }}<span>vs</span>{{ matchDetail.awayTeam }}</h4>
+          @if (matchDetail.matchStatus === 'pending') {
+            <div class="sportsmagazine-countdown is-countdown">
+            <span class="countdown-row countdown-show4">
+              <span class="countdown-section">
+              <span class="countdown-amount">{{ days }}</span>
+              <span class="countdown-period">Days</span>
+              </span>
+              <span class="countdown-section">
+                <span class="countdown-amount">{{ hours }}</span>
+                <span class="countdown-period">Hours</span>
+              </span>
+              <span class="countdown-section">
+                <span class="countdown-amount">{{ minutes }}</span>
+                <span class="countdown-period">Minutes</span>
+              </span>
+              <span class="countdown-section">
+                <span class="countdown-amount">{{ seconds }}</span>
+                <span class="countdown-period">Seconds</span>
+              </span>
+            </span>
+            </div>
+          } @else {
+            <span>Final Score</span>
+            <p><span>{{ matchDetail.homeGoal }}</span> <small>:</small>{{ matchDetail.awayGoal }}</p>
+          }
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="sportsmagazine-thumb-team-one">
+          <figure><img [src]="matchDetail.awayLogo" alt=""></figure>
+          <section>
+            <h4>{{ matchDetail.awayTeam }}</h4>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sportsmagazine-main-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="sportsmagazine-section-heading"><h2>Match Detail</h2></div>
+        <ul class="sportsmagazine-match-info">
+          <li>
+            <i class="fa fa-calendar-o"></i>
+            <span>{{ matchDetail.matchDate }}</span>
+          </li>
+          <li>
+            <i class="fa fa-clock-o"></i>
+            <span>{{ matchDetail.matchTime }}</span>
+          </li>
+          <li>
+            <i class="fa fa-map-marker"></i>
+            <span>{{ matchDetail.stadium }}</span>
+          </li>
+          <li>
+            <i class="fa fa-trophy"></i>
+            <span>{{ matchDetail.leagueName }}</span>
+          </li>
+        </ul>
+        <ul class="sportsmagazine-match-info d-flex">
+          <li>
+            <i class="fa fa-ticket"></i>
+            <select class="form-select py-0" style="height: 32px;" [(ngModel)]="paramBooking.typeId"
+                    (ngModelChange)="changeType()" name="typeId">
+              <option value="0">Select type</option>
+              @for (type of matchDetail.types; track type) {
+                <option [value]="type.typeId">{{ type.name }}</option>
+              }
+            </select>
+          </li>
+          <div class="d-flex justify-content-between align-items-center">
+            <img ngSrc="assets/images/icons8-seat-32.png" alt="" height="32" width="32">
+            <ng-select [items]="currentSelectedSeats"
+                       style="max-width: 200px;"
+                       bindLabel="seatNumber"
+                       bindValue="seatId"
+                       placeholder="Select seat"
+                       [(ngModel)]="paramBooking.seatIds"
+                       name="selectSeat"
+                       [multiple]="true"></ng-select>
+          </div>
+          <li class="ms-5">
+            <button class="btn-gradient-custom" style="height: 32px;" (click)="buyTicket()">Buy Ticket</button>
+          </li>
+        </ul>
+        <div class="sportsmagazine-rich-editor">
+          @if (currentType.description) {
+            <p>
+              {{ currentType.description }}
+            </p>
+          } @else {
+            <p>
+              No description
+            </p>
+          }
+          <div>
+            <h5>Stadium</h5>
+            <img [src]="matchDetail.stadiumImage" alt="">
+          </div>
+          <div class="sportsmagazine-post-tags">
+            <div class="sportsmagazine-tags">
+              <a href="javascript:void(0)">#Playoffs</a>
+              <a href="javascript:void(0)">#Injuries</a>
+              <a href="javascript:void(0)">#Teams</a>
+              <a href="javascript:void(0)">#Uniform</a>
+            </div>
+            <div class="sportsmagazine-blog-social">
+              <ul>
+                <li><a href="javascript:void(0)" class="color-one"><i class="fa fa-facebook"></i>facebook</a>
+                </li>
+                <li><a href="javascript:void(0)" class="color-two"><i class="fa fa-twitter"></i>Twitter</a></li>
+                <li><a href="javascript:void(0)" class="color-three"><i class="fa fa-google-plus"></i>Google+</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--// SideBar \\-->
+      <aside class="col-md-3">
+        <!--// Widget Upcoming Matches \\-->
+        <div class="sportsmagazine-widget-heading"><h2>Popular Matches</h2></div>
+        <div class="widget widget_matches">
+          <ul>
+            @for (m of matches; track m) {
+              <li>
+                <div class="sportsmagazine-team-one" style="max-width: 80px;">
+                  <h6><a href="javascript:void(0)">{{ m.homeTeamName }}</a></h6>
+                </div>
+                <span>VS</span>
+                <div class="sportsmagazine-team-two" style="max-width: 80px;">
+                  <h6><a href="javascript:void(0)">{{ m.awayTeamName }}</a></h6>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <!--// Widget Cetagories \\-->
+        <div class="sportsmagazine-widget-heading"><h2>Popular Team</h2></div>
+        <div class="widget widget_cetagories">
+          <ul>
+            @for (t of teams; track t) {
+              <li><a href="javascript:void(0)">{{ t.name }} <span>( {{ t.goals }} goals)</span></a></li>
+            }
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+

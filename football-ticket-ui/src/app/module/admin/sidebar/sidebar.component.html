@@ -1,0 +1,43 @@
+<aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
+  <div class="mdc-drawer__header">
+    <a href="javascript:void(0)" class="brand-logo">
+      <img ngSrc="assets/images/logo-2.png" alt="logo" height="58" width="163">
+    </a>
+  </div>
+  <div class="mdc-drawer__content">
+    <div class="mdc-list-group">
+      <nav class="mdc-list mdc-drawer-menu">
+        @for (item of menuAdmin; track item; ) {
+          @if (item.children.length > 0) {
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-expansion-panel-link h-auto" href="javascript:void(0)" [ngClass]="{'active': item.active}"
+                 (click)="expandMenu(item)"
+                 data-toggle="expansionPanel" data-target="ui-sub-menu">
+                {{ item.name }}
+                <i class="mdc-drawer-arrow material-icons">chevron_right</i>
+              </a>
+              <div class="mdc-expansion-panel" [ngClass]="{'d-block': item.expand}">
+                <nav class="mdc-list mdc-drawer-submenu">
+                  @for (subItem of item.children; track subItem) {
+                    <div class="mdc-list-item mdc-drawer-item">
+                      <a class="mdc-drawer-link" href="javascript:void(0)" (click)="navigateTo(subItem.path)">
+                        {{ subItem.name }}
+                      </a>
+                    </div>
+                  }
+                </nav>
+              </div>
+            </div>
+          } @else {
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="javascript:void(0)" [ngClass]="{'active': item.active}"
+                 (click)="navigateTo(item.path)">
+                {{ item.name }}
+              </a>
+            </div>
+          }
+        }
+      </nav>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,77 @@
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+      <div class="mdc-card p-0">
+        <div class="d-flex justify-content-between align-items-center py-0 pe-2">
+          <h6 class="card-title card-padding text-dark h-50">Booking list</h6>
+          <input type="text" name="search" class="form-control h-50 w-75" placeholder="Search" [(ngModel)]="keyword"
+                 (keyup)="searchData()">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-main table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+              <th class="text-left">No</th>
+              <th class="text-left">Email / Name</th>
+              <th class="text-left">Order Ref</th>
+              <th class="text-left">Type</th>
+              <th class="text-center">Match</th>
+              <th class="text-left">Time</th>
+              <th class="text-left">Price</th>
+              <th class="text-left">Seats</th>
+              <th class="text-left">Status</th>
+              <th class="text-left">Payment method</th>
+            </tr>
+            </thead>
+            <tbody>
+              @for (u of data.contents; track u; let idx = $index) {
+                <tr>
+                  <td class="text-left align-middle">{{ (data.page - 1) * data.size + idx + 1 }}</td>
+                  <td class="text-left align-middle">
+                    <span style="width: 100px;">{{ u.email }}</span> <br>
+                    <span style="width: 100px;">{{ u.userName }}</span>
+                  </td>
+                  <td class="text-left align-middle"> {{ u.txnRef }}</td>
+                  <td class="text-left align-middle"> {{ u.ticketType }}</td>
+                  <td class="text-left align-middle">
+                    <table class="border-none m-0 table-child">
+                      <tr>
+                        <td>
+                          <img [src]="u.homeLogo" alt="team-logo" class="team-logo">
+                        </td>
+                        <td>{{ u.teamMatch }}</td>
+                        <td>
+                          <img [src]="u.awayLogo" alt="team-logo" class="team-logo">
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td class="text-left align-middle"> {{ u.matchTime }}</td>
+                  <td class="text-left align-middle"> {{ u.totalPrice }}</td>
+                  <td class="text-left align-middle"> {{ u.seats }}</td>
+                  <td class="text-left align-middle">
+                    @if (u.bookingStatus === 'completed') {
+                      <span class="badge badge-success">Success</span>
+                    } @else if (u.bookingStatus === 'cancelled') {
+                      <span class="badge badge-danger">Failed</span>
+                    } @else if (u.bookingStatus === 'pending') {
+                      <span class="badge badge-warning">Pending</span>
+                    }
+                  </td>
+                  <td class="text-left align-middle">{{ u.paymentMethod }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex justify-content-center">
+          <pagination [totalItems]="data.totalRecords" [(ngModel)]="data.page" [itemsPerPage]="data.size"
+                      [maxSize]="5"
+                      [boundaryLinks]="true" [directionLinks]="true" (pageChanged)="pageChanged($event)">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

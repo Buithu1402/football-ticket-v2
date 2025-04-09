@@ -1,0 +1,93 @@
+/football-ticket-service/HELP.md
+/football-ticket-service/target/
+/football-ticket-service/.mvn/wrapper/maven-wrapper.jar
+/football-ticket-service/**/src/main/**/target/
+/football-ticket-service/**/src/test/**/target/
+/football-ticket-service/logs/
+### STS ###
+/football-ticket-service/.apt_generated
+/football-ticket-service/.classpath
+/football-ticket-service/.factorypath
+/football-ticket-service/.project
+/football-ticket-service/.settings
+/football-ticket-service/.springBeans
+/football-ticket-service/.sts4-cache
+ 
+### IntelliJ IDEA ###
+/football-ticket-service/.idea
+/football-ticket-service/*.iws
+/football-ticket-service/*.iml
+/football-ticket-service/*.ipr
+
+### NetBeans ###
+/football-ticket-service/nbproject/private/
+/football-ticket-service/nbbuild/
+/football-ticket-service/dist/
+/football-ticket-service/nbdist/
+/football-ticket-service/.nb-gradle/
+/football-ticket-service/build/
+/football-ticket-service/**/src/main/**/build/
+/football-ticket-service/**/src/test/**/build/
+
+### VS Code ###
+/football-ticket-service/.vscode/
+
+
+
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/football-ticket-ui/dist
+/football-ticket-ui/tmp
+/football-ticket-ui/out-tsc
+/football-ticket-ui/bazel-out
+
+# Node
+/football-ticket-ui/node_modules
+/football-ticket-ui/npm-debug.log
+/football-ticket-ui/yarn-error.log
+
+# IDEs and editors
+/football-ticket-ui/.idea/
+/football-ticket-ui/.project
+/football-ticket-ui/.classpath
+/football-ticket-ui/.c9/
+/football-ticket-ui/*.launch
+/football-ticket-ui/.settings/
+/football-ticket-ui/*.sublime-workspace
+
+# Visual Studio Code
+/football-ticket-ui/.vscode/
+/football-ticket-ui/.history/*
+
+# Miscellaneous
+/football-ticket-ui/.angular/cache
+/football-ticket-ui/.sass-cache/
+/football-ticket-ui/connect.lock
+/football-ticket-ui/coverage
+/football-ticket-ui/libpeerconnection.log
+/football-ticket-ui/testem.log
+/football-ticket-ui/typings
+
+# System files
+/football-ticket-ui/.DS_Store
+/football-ticket-ui/Thumbs.db
+
+
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+/logs/

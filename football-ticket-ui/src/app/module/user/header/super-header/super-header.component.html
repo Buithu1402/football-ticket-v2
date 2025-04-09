@@ -1,0 +1,17 @@
+<div class="sportsmagazine-subheader">
+  <span class="subheader-transparent"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ title() }}</h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="sportsmagazine-breadcrumb">
+          @for (b of breadCrumb(); track b; let last = $last) {
+            <li><a href="{{ last ? 'javascript:void(0)' : b.url }}">{{ b.label }}</a></li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

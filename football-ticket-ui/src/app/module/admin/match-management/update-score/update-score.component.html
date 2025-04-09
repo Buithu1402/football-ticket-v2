@@ -1,0 +1,39 @@
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-12">
+      <div class="mdc-card">
+        <h6 class="card-title">Update score match</h6>
+        <div class="template-demo">
+          <div class="mdc-layout-grid__inner">
+            <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
+              <input type="number" class="form-control" id="homeGoal"
+                     min="0"
+                     [(ngModel)]="param.homeScore"
+                     name="homeGoal" placeholder="1">
+              <label for="homeGoal">Home goal</label>
+            </div>
+
+            <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
+              <input type="number" class="form-control" id="awayGoal"
+                     min="0"
+                     [(ngModel)]="param.awayScore"
+                     name="awayGoal" placeholder="1">
+              <label for="awayGoal">Away goal</label>
+            </div>
+
+            <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
+              <select name="status" id="status" class="form-select" [(ngModel)]="param.status">
+                <option value="pending">Pending</option>
+                <option value="live">Live</option>
+                <option value="completed">Completed</option>
+              </select>
+              <label for="status">Status</label>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" (click)="update()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

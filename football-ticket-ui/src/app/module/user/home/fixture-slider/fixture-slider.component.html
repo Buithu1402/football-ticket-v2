@@ -1,0 +1,25 @@
+<div class="col-md-12">
+  <ngx-slick-carousel
+    class="carousel sportsmagazine-fixture-slider"
+    [config]="slideConfig">
+    @for (item of matches; track $index; ) {
+      <div ngxSlickItem class="sportsmagazine-fixture-slider-layer sportsmagazine-fixture-booked cursor"
+           (click)="viewDetail(item.matchId)">
+        <time>{{ item.matchDate|date:'dd-MM-yyyy' }} {{ item.matchTime }}</time>
+        <ul class="sportsmagazine-bgcolor">
+          <li class="first-child">
+            <small>{{ item.homeTeamName }}</small> VS
+            <span>{{ item.awayTeamName }}</span>
+          </li>
+          <li class="d-flex justify-content-between">
+            <img [src]="item.homeLogo" alt="" style="width: 26px; height: 26px; object-fit: contain;">
+            Available
+            <img [src]="item.awayLogo" alt="" style="width: 26px; height: 26px; object-fit: contain;">
+          </li>
+        </ul>
+      </div>
+    }
+  </ngx-slick-carousel>
+</div>
+
+

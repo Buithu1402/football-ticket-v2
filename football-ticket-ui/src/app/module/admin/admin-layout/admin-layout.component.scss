@@ -1,0 +1,9 @@
+@import '../../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../../node_modules/bootstrap/scss/variables';
+@import '../../../../../node_modules/bootstrap/scss/bootstrap';
+@import "@ng-select/ng-select/themes/default.theme.css";
+@import 'ngx-toastr/toastr';
+@import 'ngx-bootstrap/datepicker/bs-datepicker';
+.main-wrapper {
+  margin-left: 243px !important;
+}

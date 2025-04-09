@@ -1,0 +1,73 @@
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+      <div class="mdc-card p-0">
+        <div class="d-flex justify-content-between align-items-center py-0 pe-2">
+          <h6 class="card-title card-padding text-dark h-50">List Match</h6>
+          <input type="text" name="search" class="form-control h-50 w-75" placeholder="Search" [(ngModel)]="param.key"
+                 (keyup)="searchData()">
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+              <th class="text-left">No</th>
+              <th class="text-left">Home team</th>
+              <th class="text-left">Away team</th>
+              <th class="text-left">Match Date</th>
+              <th class="text-left">Stadium name</th>
+              <th class="text-left">Score</th>
+              <th class="text-left">Status</th>
+              <th class="text-left">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+              @for (u of data.contents; track u; let idx = $index) {
+                <tr>
+                  <td class="text-left align-middle">{{ idx + 1 }}</td>
+                  <td class="text-left align-middle">
+                    {{ u.homeTeamName }} <br>
+                    <img [src]="u.homeLogo" alt="" style="width: 80px; height: 80px; object-fit: contain;">
+                  </td>
+                  <td class="text-left align-middle">
+                    {{ u.awayTeamName }}<br>
+                    <img [src]="u.awayLogo" alt="" style="width: 80px; height: 80px; object-fit: contain;">
+                  </td>
+                  <td class="text-left align-middle">
+                    {{ u.matchDate | date: 'dd/MM/yyyy' }} <br>
+                    {{ u.matchTime }}
+                  </td>
+                  <td class="text-left align-middle">
+                    {{ u.stadiumName }}
+                  </td>
+                  <td class="text-left align-middle">
+                    {{ u.homeGoal }} - {{ u.awayGoal }}
+                  </td>
+                  <td class="text-left align-middle">
+                    @if (u.status.toLowerCase() === 'pending') {
+                      <span class="badge bg-warning">Pending</span>
+                    } @else if (u.status.toLowerCase() === 'live') {
+                      <span class="badge bg-info">Live</span>
+                    } @else if (u.status.toLowerCase() === 'completed') {
+                      <span class="badge bg-success">Finished</span>
+                    }
+                  </td>
+                  <td class="text-left align-middle">
+                    <button class="btn btn-info" (click)="ticket(u)">Ticket</button>
+                    <button class="btn btn-success mx-2" (click)="update(u)">Update</button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex justify-content-center">
+          <pagination [totalItems]="data.totalRecords" [(ngModel)]="data.page" [itemsPerPage]="data.size"
+                      [maxSize]="5"
+                      [boundaryLinks]="true" [directionLinks]="true" (pageChanged)="pageChanged($event)">
+          </pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

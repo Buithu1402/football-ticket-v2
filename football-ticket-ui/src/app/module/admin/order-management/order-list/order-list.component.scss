@@ -1,0 +1,139 @@
+.table-main {
+  img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+  }
+
+  thead {
+    th {
+      border-bottom: 1px solid #dee2e6;
+
+
+      &:nth-child(1) {
+        width: 5%;
+      }
+
+      &:nth-child(2) {
+        width: 10%;
+      }
+
+      &:nth-child(3) {
+        width: 7%;
+      }
+
+      &:nth-child(4) {
+        width: 3%;
+      }
+
+      &:nth-child(5) {
+        width: 20%;
+      }
+
+      &:nth-child(6) {
+        width: 10%;
+      }
+
+      &:nth-child(7) {
+        width: 10%;
+      }
+
+      &:nth-child(8) {
+        width: 10%;
+      }
+
+      &:nth-child(9) {
+        width: 10%;
+      }
+
+      &:nth-child(9) {
+        width: 5%;
+      }
+    }
+  }
+
+  tr {
+    td {
+      border-bottom: 1px solid #dee2e6;
+
+      &:nth-child(1) {
+        width: 5%;
+      }
+
+      &:nth-child(2) {
+        width: 10%;
+      }
+
+      &:nth-child(3) {
+        width: 7%;
+      }
+
+      &:nth-child(4) {
+        width: 3%;
+      }
+
+      &:nth-child(5) {
+        width: 20%;
+      }
+
+      &:nth-child(6) {
+        width: 10%;
+      }
+
+      &:nth-child(7) {
+        width: 10%;
+      }
+
+      &:nth-child(8) {
+        width: 10%;
+      }
+
+      &:nth-child(9) {
+        width: 10%;
+      }
+
+      &:nth-child(9) {
+        width: 5%;
+      }
+    }
+  }
+
+  .table-child {
+    thead {
+      th {
+        border-bottom: 1px solid #dee2e6;
+
+        &:nth-child(1) {
+          width: 20%;
+        }
+
+        &:nth-child(2) {
+          width: 60%;
+        }
+
+        &:nth-child(3) {
+          width: 20%;
+        }
+      }
+    }
+
+    tr {
+      td {
+        border-bottom: 1px solid #dee2e6;
+
+        &:nth-child(1) {
+          width: 20%;
+        }
+
+        &:nth-child(2) {
+          width: 60%;
+        }
+
+        &:nth-child(3) {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+

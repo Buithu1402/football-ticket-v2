@@ -1,0 +1,38 @@
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+      <div class="mdc-card p-0">
+        <div class="d-flex justify-content-between align-items-center py-0 pe-2">
+          <h6 class="card-title card-padding text-dark h-50">List Seat</h6>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+              <th class="text-left">No</th>
+              <th class="text-left">Seat number</th>
+              <th class="text-left">Type</th>
+              <th class="text-left">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+              @for (u of seats; track u; let idx = $index) {
+                <tr>
+                  <td class="text-left align-middle">{{ idx + 1 }}</td>
+                  <td class="text-left align-middle">{{ u.seatNumber }}</td>
+                  <td class="text-left align-middle">
+                    <span class="badge bg-{{u.typeName}}" style="width: 100px;"> {{ u.typeName }}</span>
+                  </td>
+                  <td class="text-left align-middle" style="width: 10%;">
+                    <button class="btn btn-danger" (click)="delete(u.seatId)">Delete</button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

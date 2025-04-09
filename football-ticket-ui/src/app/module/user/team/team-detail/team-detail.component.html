@@ -1,0 +1,100 @@
+<div class="sportsmagazine-main-section sportsmagazine-overview-full">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sportsmagazine-overview ">
+          @if (teamDetail.lastResult) {
+            <h6 class="fw-bold">Last Result</h6>
+            <div class="sportsmagazine-overview-wrap d-flex justify-content-center">
+              <div class="sportsmagazine-overview-team-one">
+                <figure><img [src]="teamDetail.lastResult?.homeLogo" alt=""></figure>
+                <section>
+                  <h4><a href="javascript:void(0)">{{ teamDetail.lastResult?.homeTeam }}</a></h4>
+                </section>
+              </div>
+              <div class="sportsmagazine-overview-score d-flex flex-column justify-content-center align-items-center"
+                   style="flex-direction: column;">
+                <h4 class="fw-bold">{{ teamDetail.lastResult?.leagueName }}</h4>
+                <time>{{ teamDetail.lastResult?.matchDatetime | date: 'MMMM d, y, h:mm:ss a z' }}</time>
+                <span>{{ teamDetail.lastResult?.homeScore }}
+                  <small>:</small> {{ teamDetail.lastResult?.awayScore }}</span>
+              </div>
+              <div class="sportsmagazine-overview-team-two">
+                <figure><img [src]="teamDetail.lastResult?.awayLogo" alt=""></figure>
+                <section>
+                  <h4><a href="javascript:void(0)">{{ teamDetail.lastResult?.awayTeam }}</a></h4>
+                </section>
+              </div>
+            </div>
+          }
+          <span class="sportsmagazine-gamestats-btn">About team</span>
+          <div class="sportsmagazine-gamestats d-flex justify-content-center">
+            <div class="sportsmagazine-overview-scorecard w-100">
+              <table class="table table-striped">
+                <tr>
+                  <td>Name</td>
+                  <td>Established Year</td>
+                  <td>Logo</td>
+                  <td>Address</td>
+                  <td>Match played</td>
+                  <td>Win</td>
+                  <td>Draw</td>
+                  <td>Lose</td>
+                  <td>Goal</td>
+                </tr>
+                <tr>
+                  <td>{{ teamDetail.teamDetail.name }}</td>
+                  <td>{{ teamDetail.teamDetail.establishedYear }}</td>
+                  <td><img [src]="teamDetail.teamDetail.logo" alt=""
+                           style="width: 45px; height: 45px; object-fit: contain;"></td>
+                  <td>{{ teamDetail.teamDetail.address }}</td>
+                  <td>{{ teamDetail.teamDetail.matchPlayed }}</td>
+                  <td>{{ teamDetail.teamDetail.win }}</td>
+                  <td>{{ teamDetail.teamDetail.draw }}</td>
+                  <td>{{ teamDetail.teamDetail.losses }}</td>
+                  <td>{{ teamDetail.teamDetail.goals }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="sportsmagazine-roster-graph sportsmagazine-overview-graph">
+          <h4>Last 5 Match</h4>
+          <table class="sportsmagazine-client-detail table-5">
+            <tr>
+              <th>League</th>
+              <th>Match date</th>
+              <th>Match</th>
+              <th>Score</th>
+            </tr>
+
+            @for (m of teamDetail.last5Match; track m) {
+              <tr>
+                <td>{{ m.leagueName }}</td>
+                <td>{{ m.matchDatetime | date: 'MMMM d, y, h:mm:ss a z' }}</td>
+                <td>
+                  <div class="d-flex justify-content-evenly">
+                    <img [src]="m.homeLogo" alt="">
+                    <div class="d-flex justify-content-between w-50">
+                      <span>{{ m.homeTeam }}</span>
+                      <span>vs</span>
+                      <span>{{ m.awayTeam }}</span>
+                    </div>
+                    <img [src]="m.awayLogo" alt="">
+                  </div>
+                </td>
+                <td>{{ m.homeScore }} : {{ m.awayScore }}</td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="4" class="text-center">
+                  No match found
+                </td>
+              </tr>
+            }
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

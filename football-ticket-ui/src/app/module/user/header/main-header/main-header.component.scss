@@ -1,0 +1,17 @@
+.animated-text {
+  background: linear-gradient(90deg, #000000, #FFD700, #0e2ebe); /* Black to Yellow to Black gradient */
+  background-size: 200% auto; /* Double the width for smooth animation */
+  color: transparent; /* Make text color transparent */
+  -webkit-background-clip: text; /* Clip background to text (for WebKit browsers) */
+  background-clip: text; /* Clip background to text */
+  animation: moveGradient 3s linear infinite; /* Animation for moving gradient */
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0 80%; /* Start from left */
+  }
+  100% {
+    background-position: 100% 20%; /* Move to right */
+  }
+}

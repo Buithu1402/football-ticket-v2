@@ -1,0 +1,21 @@
+<div class="sportsmagazine-main-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sportsmagazine-fancy-title-two"><h2>Our Partners <span></span></h2></div>
+        <ngx-slick-carousel
+          class="carousel sportsmagazine-partner-slider"
+          [config]="sliderConfig">
+          @for (item of images; track item + $index; ) {
+            <div ngxSlickItem>
+              <a href="javascript:void(0)">
+                <img [ngSrc]="item" alt=""
+                     height="99" width="263">
+              </a>
+            </div>
+          }
+        </ngx-slick-carousel>
+      </div>
+    </div>
+  </div>
+</div>

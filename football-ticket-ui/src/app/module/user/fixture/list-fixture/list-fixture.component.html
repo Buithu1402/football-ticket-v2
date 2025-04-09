@@ -1,0 +1,56 @@
+<div class="sportsmagazine-main-section sportsmagazine-fixture-listfull">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sportsmagazine-fixture sportsmagazine-fixture-list">
+          <ul class="row">
+            @for (match of matches().contents; track match; let idx = $index) {
+              <li class="col-md-12 cursor" (click)="navigateToDetail(match)">
+                <div class="sportsmagazine-fixture-wrap shadow-primary">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team" style="width: 275px;">
+                      <figure><img [src]="match.homeLogo" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="javascript:void(0)">{{ match.homeTeamName }}</a></h6>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Match # {{ idx + 1 }}</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team" style="width: 275px;">
+                      <figure><img [src]="match.awayLogo" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="javascript:void(0)">{{ match.awayTeamName }}</a></h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sportsmagazine-buy-ticket">
+                    <div class="sportsmagazine-buy-ticket-text">
+                      <h5>{{ match.stadiumName }}</h5>
+                      <time datetime="2008-02-14 20:00">{{ match.matchDate }} <span>{{ match.matchTime }}</span>
+                      </time>
+                    </div>
+                    <a href="javascript:void(0)" class="ticket-buy-btn">Buy Ticket</a>
+                  </div>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+        <!--// Pagination \\-->
+        <div class="sportsmagazine-pagination">
+          <div class="page-numbers">
+            <pagination [totalItems]="matches().totalRecords" [(ngModel)]="matches().page"
+                        [itemsPerPage]="matches().size"
+                        [maxSize]="5"
+                        [boundaryLinks]="true" [directionLinks]="true" (pageChanged)="onPageChange($event)">
+            </pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

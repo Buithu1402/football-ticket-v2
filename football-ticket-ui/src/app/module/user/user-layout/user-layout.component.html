@@ -1,0 +1,17 @@
+<div class="sportsmagazine-main-wrapper">
+  <app-header [isLogin]="authService.isLoggedIn"/>
+  @if (isHome()) {
+    <app-banner/>
+  } @else if (!isFixtureDetail()) {
+    <app-super-header [title]="storeService.title()"/>
+  }
+  <div class="sportsmagazine-main-content" [ngClass]="{'sportsmagazine-main-contentminus': isFixtureDetail()}">
+    <router-outlet/>
+  </div>
+
+  <app-footer/>
+  <div class="clearfix"></div>
+</div>
+
+<app-search-modal/>
+

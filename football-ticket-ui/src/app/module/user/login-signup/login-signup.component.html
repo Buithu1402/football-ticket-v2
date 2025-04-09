@@ -1,0 +1,73 @@
+<div class="sportsmagazine-main-section sportsmagazine-login-form-full">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="sportsmagazine-login-form">
+          <h4>Login To Your Account</h4>
+          <form>
+            <ul>
+              @for (input of inputLoginParams; track input) {
+                <li class="text-start">
+                  <input [type]="input.type" [name]="input.name" [(ngModel)]="input.value"
+                         [ngClass]="{'input-invalid': !!input.message}"
+                         placeholder="Enter here" class="form-control text-dark fw-bold">
+                  @if (input.message) {
+                    <span><strong class="text-danger">{{ input.message }}</strong></span>
+                  }
+                  @if (input.name === 'password') {
+                    <a href="javascript:void(0)">Forget Password?</a>
+                  }
+                </li>
+              }
+              <li>
+                <label class="submit-border">
+                  <input type="button" value="Sign In" (click)="login()"><span></span>
+                </label>
+              </li>
+            </ul>
+          </form>
+          <ul class="sportsmagazine-login-social">
+            <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
+                   class="color-one"><i class="fa fa-facebook"></i>facebook</a></li>
+            <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
+                   class="color-two"><i class="fa fa-twitter"></i>Twitter</a></li>
+            <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
+                   class="color-three"><i class="fa fa-google-plus"></i>Google+</a></li>
+            <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
+                   class="color-four"><i class="fa fa-instagram"></i>Instagram</a>
+            </li>
+          </ul>
+          <span>Not A Member Yet ?<a href="#"> Sign - Up Now !</a></span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="sportsmagazine-login-form sportsmagazine-register-form">
+          <h4>Register Your Account Now</h4>
+          <form>
+            <ul>
+              @for (input of inputRegisterParams; track input) {
+                <li>
+                  <label class="form-label">{{ input.title }}</label>
+                  <input [type]="input.type" [name]="input.name" placeholder="Enter here"
+                         class="form-control text-dark fw-bold"
+                         [ngClass]="{'input-invalid': !!input.message}"
+                         [(ngModel)]="input.value"
+                  >
+                  @if (input.message) {
+                    <span><strong class="text-danger">{{ input.message }}</strong></span>
+                  }
+                </li>
+              }
+              <li>
+                <label class="submit-border">
+                  <input type="button" value="Sign up" (click)="signUp()"><span></span>
+                </label>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

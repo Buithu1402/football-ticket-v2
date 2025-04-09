@@ -1,0 +1,163 @@
+@import 'app/share/styles/addition-style';
+
+.input-invalid {
+  border: 1px solid red !important;
+}
+
+.container-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .upload-box {
+    padding: 20px;
+    border: 2px dashed rgb(199, 199, 199);
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+      padding: 1rem 0;
+      text-align: center;
+
+      .upload-icon {
+        img {
+          width: 10%;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        padding-bottom: 1rem;
+      }
+
+      .text {
+
+        font-weight: 400;
+        display: inline;
+        color: blue;
+      }
+
+      .upload-btn-wrapper {
+        padding-top: 0.3rem;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+      }
+
+      .btn {
+        border: none;
+        padding: 10px 40px;
+        border-radius: 3px;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .upload-btn-wrapper input[type="file"] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
+.cursor {
+  cursor: pointer;
+}
+
+.btn-gradient-custom {
+  background: linear-gradient(90deg, #efe7cf, #3a518d, #FF9800);
+  background-size: 200% 200%;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  animation: gradientMove 3s infinite linear;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.badge {
+  width: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #dc3545;
+
+  &.badge-success {
+    background-color: #28a745;
+  }
+
+  &.badge-warning {
+    background-color: #ffc107;
+  }
+
+  &.badge-info {
+    background-color: #17a2b8;
+  }
+}
+
+.bg-VIP {
+  background: linear-gradient(135deg, #FFFF66, #FFFF33); /* Gold */
+  color: #000 !important;
+}
+
+.bg-BASIC {
+  background: linear-gradient(135deg, #EEEEEE, #DDDDDD, #CCCCCC); /* Gray */
+  color: #000 !important;
+}
+
+.bg-PREMIUM {
+  position: relative;
+  background: linear-gradient(135deg, #0099CC, #00FFFF);
+  color: #fff !important;
+  overflow: hidden;
+}
+
+/* Tạo lớp ánh sáng lướt ngang */
+.bg-PREMIUM::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%
+  );
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}

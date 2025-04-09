@@ -1,0 +1,49 @@
+<div class="sportsmagazine-topstrip-two sportsmagazine-bgcolor">
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-6">
+        <span><small>Latest News</small> <i class="fa fa-caret-right"></i></span>
+        <div class="sportsmagazine-ticker-slide">
+          <div class="sportsmagazine-ticker-slide-text"></div>
+          <div class="sportsmagazine-ticker-slide-text"></div>
+        </div>
+      </aside>
+      <aside class="col-md-6">
+        <ul class="sportsmagazine-user-link">
+          @if (!isLogin) {
+            <li>
+              <a href="javascript:void(0)" routerLinkActive="/login-register" routerLink="/login-register">
+                <i class="fa fa-user"></i>
+                Register Now
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" routerLinkActive="/login-register" routerLink="/login-register">
+                <i class="fa fa-sign-in"></i>
+                Log In
+              </a>
+            </li>
+          } @else {
+            <li>
+              <a href="javascript:void(0)" routerLinkActive="active" routerLink="/history">
+                <i class="fa fa-user"></i>
+                History
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" (click)="authService.logout()">
+                <i class="fa fa-sign-in"></i>
+                Log Out
+              </a>
+            </li>
+          }
+          <li>
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="sportsmagazine-main-section sportsmagazine-player-listfull">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sportsmagazine-player sportsmagazine-player-list">
+          <ul class="row">
+            @for (team of teams.contents; track team) {
+              <li class="col-md-6" (click)="detail(team)">
+                <figure><a href="javascript:void(0)">
+                  <img [src]="team.logo" alt="" style="width: 268px; height: 277px; object-fit: contain;">
+                  <i class="fa fa-link"></i></a>
+                </figure>
+                <div class="sportsmagazine-player-list-text" style="width: 268px; height: 277px;">
+                  <a href="javascript:void(0)" class="sportsmagazine-forword-btn">{{ team.goals }} goal</a>
+                  <a href="javascript:void(0)" class="sportsmagazine-forword-btn mx-3">{{ team.win }} win</a>
+                  <a href="javascript:void(0)" class="sportsmagazine-forword-btn me-2">{{ team.losses }} loss</a>
+                  <h5><a href="javascript:void(0)">{{ team.name }}</a></h5>
+                  <p>{{ team.address }} </p>
+                  <ul class="sportsmagazine-player-social">
+                    <li><a href="javascript:void(0)" class="icon-facebook2"></a></li>
+                    <li><a href="javascript:void(0)" class="icon-google-plus2"></a>
+                    </li>
+                    <li><a href="javascript:void(0)" class=" icon-linkedin"></a></li>
+                    <li><a href="javascript:void(0)" class="icon-social62"></a></li>
+                  </ul>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+        <!--// Pagination \\-->
+        <div class="sportsmagazine-pagination">
+          <div class="page-numbers">
+            <pagination [totalItems]="teams.totalRecords" [(ngModel)]="teams.page" [itemsPerPage]="teams.size"
+                        [maxSize]="5"
+                        [boundaryLinks]="true" [directionLinks]="true" (pageChanged)="onPageChange($event)">
+            </pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

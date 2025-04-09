@@ -1,0 +1,53 @@
+<div class="sportsmagazine-main-section sportsmagazine-modren-fixturefull">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sportsmagazine-fixture sportsmagazine-modren-fixture">
+          <ul class="row">
+            @for (match of matches().contents; track match; let idx = $index) {
+              <li class="col-md-6 cursor" (click)="navigateToDetail(match)">
+                <div class="sportsmagazine-modren-fixture-wrap">
+                  <div class="sportsmagazine-modren-fixture-text shadow-primary">
+                    <div>
+                      <div class="sportsmagazine-modren-team-one" style="width: 150px; height: 130px;">
+                        <figure><img [src]="match.homeLogo" alt=""></figure>
+                      </div>
+                      <h6 style="position: relative; margin: 0 0 0 -15px;">{{ match.homeTeamName }}</h6>
+                    </div>
+                    <div class="sportsmagazine-modren-match-text">
+                      <h5>Match # {{ idx + 1 }}</h5>
+                      <time>{{ match.matchDate }} {{ match.matchTime }}</time>
+                      <div class="clearfix"></div>
+                      <span>VS</span>
+                      <h6>{{ match.stadiumName }}</h6>
+                      <a href="javascript:void(0)" class="ticket-buy-btn">Buy Ticket</a>
+                    </div>
+                    <div>
+                      <div class="sportsmagazine-modren-team-two" style="width: 150px; height: 130px;">
+                        <figure><img [src]="match.awayLogo" alt=""></figure>
+                      </div>
+                      <h6 style="position: relative; margin: 0 -15px 0 0;">{{ match.awayTeamName }}</h6>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+        <!--// Pagination \\-->
+        <div class="sportsmagazine-pagination">
+          <div class="page-numbers">
+            <pagination [totalItems]="matches().totalRecords" [(ngModel)]="matches().page"
+                        [itemsPerPage]="matches().size"
+                        [maxSize]="5"
+                        [boundaryLinks]="true" [directionLinks]="true" (pageChanged)="onPageChange($event)">
+            </pagination>
+          </div>
+        </div>
+        <!--// Pagination \\-->
+      </div>
+
+
+    </div>
+  </div>
+</div>

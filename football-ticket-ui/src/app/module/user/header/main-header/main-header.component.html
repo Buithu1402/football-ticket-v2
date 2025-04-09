@@ -1,0 +1,76 @@
+<div class="sportsmagazine-main-header">
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-3"><a href="javascript:void(0)" (click)="navigate('/', 0)" class="sportsmagazine-logo-two">
+        <img ngSrc="assets/images/logo-2.png" alt="" height="58" width="163"></a>
+      </aside>
+      <aside class="col-md-9">
+        <ul class="header-info">
+          <li>
+            <i class="icon-technology52"></i>
+            <span>19001212</span>
+            <a href="mailto:name@email.com">{{ 'thuthu14022003@gmail.com' }}</a>
+          </li>
+          <li>
+            <i class="icon-location5"></i>
+            <span>Ha Noi</span>
+            <small>Nam tu liem</small>
+          </li>
+          <li>
+            <i class="icon-people22"></i>
+            <span>Support 24/7</span>
+            <small>{{ 'thuthu14022003@gmail.com' }}</small>
+          </li>
+        </ul>
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1" aria-expanded="true">
+              <span class="sr-only">Menu</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              @for (menu of menus; track menu; let idx = $index) {
+                @if (menu.children.length) {
+                  <li class="sportsmagazine-megamenu-li" [ngClass]="{'active': menu.isActive}">
+                    <a href="javascript:void(0)">{{ menu.name }}</a>
+                    <ul class="sportsmagazine-megamenu">
+                      <li class="row">
+                        <div class="col-md-6">
+                          <h4>{{ menu.title }}</h4>
+                          <ul class="sportsmagazine-megalist">
+                            @for (child of menu.children; track child;) {
+                              <li>
+                                <a href="javascript:void(0)" (click)="navigate(child.link, idx)">{{ child.name }}</a>
+                              </li>
+                            }
+                          </ul>
+                        </div>
+                        @if (menu.thumbnail) {
+                          <div class="col-md-6">
+                            <a href="javascript:void(0)" class="sportsmagazine-thumbnail">
+                              <img [ngSrc]="menu.thumbnail" alt="" height="275" width="488"/>
+                            </a>
+                          </div>
+                        }
+                      </li>
+                    </ul>
+                  </li>
+                } @else {
+                  <li [ngClass]="{'active': menu.isActive}">
+                    <a href="javascript:void(0)" [ngClass]="{'animated-text': menu.specialClassCss}"
+                       (click)="navigate(menu.link, idx)">{{ menu.name }}</a>
+                  </li>
+                }
+              }
+            </ul>
+          </div>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</div>

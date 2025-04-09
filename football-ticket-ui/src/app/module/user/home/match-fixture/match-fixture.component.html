@@ -1,0 +1,59 @@
+<div class="col-md-6">
+  <div class="sportsmagazine-match-fixture">
+    <div class="sportsmagazine-classic-heading">
+      <h2>Match Fixtures</h2>
+    </div>
+    <table class="sportsmagazine-client-detail">
+      @for (match of matches; track match) {
+        <tr class="cursor" (click)="viewMatchDetail(match.matchId)">
+          <td>{{ match.matchDate|date:'dd-MM-yyyy' }} <br/>{{ match.matchTime }}</td>
+          <td>
+            <figure><img [src]="match.homeLogo" alt="" style="width: 26px; height: 26px;"></figure>
+            <div class="player-stats-text">
+              <h6>{{ match.homeTeamName }}</h6>
+            </div>
+          </td>
+          <td><span>VS</span></td>
+          <td>
+            <figure><img [src]="match.awayLogo" alt="" style="width: 26px; height: 26px;"></figure>
+            <div class="player-stats-text">
+              <h6>{{ match.awayTeamName }}</h6>
+            </div>
+          </td>
+        </tr>
+      }
+    </table>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="sportsmagazine-match-fixture sportsmagazine-team-ranking">
+    <div class="sportsmagazine-classic-heading">
+      <h2>Team Rankings</h2>
+    </div>
+    <table class="sportsmagazine-client-detail">
+      <tr>
+        <th>Team Rank</th>
+        <th>Goal</th>
+        <th>Win</th>
+        <th>Loss</th>
+        <th>Draw</th>
+      </tr>
+      @for (team of teams; track team; let idx = $index) {
+        <tr>
+          <td>
+            <span>{{ idx + 1 }}</span>
+            <figure><img [src]="team.logo" alt=""></figure>
+            <div class="player-stats-text">
+              <h6>{{ team.name }}</h6>
+              <span>{{ team.stadiumName }}</span>
+            </div>
+          </td>
+          <td>{{ team.goals }}</td>
+          <td>{{ team.win }}</td>
+          <td>{{ team.losses }}</td>
+          <td>{{ team.draw }}</td>
+        </tr>
+      }
+    </table>
+  </div>
+</div>

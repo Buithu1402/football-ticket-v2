@@ -1,0 +1,155 @@
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-12">
+      <div class="mdc-card">
+        <h6 class="card-title">{{ title() }}</h6>
+        <div class="template-demo">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form-floating mb-3 w-100">
+                <input type="text" class="form-control" id="teamName" placeholder="Enter here"
+                       [(ngModel)]="team().name">
+                <label for="teamName">Team name</label>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form-floating mb-3 w-100">
+                <input type="text" class="form-control" id="address" placeholder="Enter here"
+                       [(ngModel)]="team().address">
+                <label for="address">Address</label>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form-floating mb-3 w-100">
+                <input type="text" class="form-control" id="establishedYear" placeholder="Enter here"
+                       [(ngModel)]="team().establishedYear">
+                <label for="establishedYear">Established Year</label>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form-floating mb-3 w-100">
+                <input type="text" class="form-control" id="stadiumName" placeholder="Enter here"
+                       [(ngModel)]="team().stadiumName">
+                <label for="stadiumName">Stadium Name</label>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form-floating mb-3 w-100">
+                <input type="number" class="form-control" id="goal" placeholder="Enter here"
+                       [(ngModel)]="team().goals">
+                <label for="goal">Goal</label>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form-floating mb-3 w-100">
+                <input type="number" class="form-control" id="matchPlayed" placeholder="Enter here"
+                       [(ngModel)]="team().matchPlayed">
+                <label for="matchPlayed">Match played</label>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form-floating mb-3 w-100">
+                <input type="number" class="form-control" id="win" placeholder="Enter here"
+                       [(ngModel)]="team().win">
+                <label for="win">Win</label>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form-floating mb-3 w-100">
+                <input type="number" class="form-control" id="loss" placeholder="Enter here"
+                       [(ngModel)]="team().losses">
+                <label for="loss">Loss</label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop d-flex flex-column">
+              <label>Logo</label>
+              <div class="d-flex justify-content-between row w-100 mb-2 row">
+                <div class="container-upload col-6 flex-column align-items-start w-100"
+                     (drop)="fileService.handleDrop($event)"
+                     (dragover)="fileService.allowDrop($event)">
+                  <div class="upload-box">
+                    <div class="content">
+                      <div class="upload-icon" (drop)="fileService.handleDrop($event)"
+                           (dragover)="fileService.allowDrop($event)">
+                        <i class="mdi mdi-cloud-upload text-dark" style="height: 100px; width: 100px;"></i>
+                      </div>
+                      <h5 class="text-dark" (drop)="fileService.handleDrop($event)"
+                          (dragover)="fileService.allowDrop($event)">
+                        Drag and drop file here
+                      </h5>
+                      <p>Or</p>
+                      <div class="upload-btn-wrapper">
+                        <button class="btn btn-gradient-primary-2">Upload</button>
+                        <input type="file" name="file" (change)="fileService.handleFileInput($event)"
+                               (drop)="fileService.handleDrop($event)"
+                               (dragover)="fileService.allowDrop($event)"/>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- file preview template -->
+                  @if (fileService.fileData) {
+                    <div class="w-100" id="uploadPreviewTemplate w-100">
+                      <div class="card mt-1 mb-0 shadow-none border">
+                        <div class="p-2">
+                          <div class="row align-items-center d-flex flex-column">
+                            <div class="col-auto">
+                              <img data-dz-thumbnail [src]="fileService.mFile.url" class="avatar-sm rounded bg-light"
+                                   style="height: 250px; width: 250px; object-fit: contain;"
+                                   alt="">
+                            </div>
+                            <div class="col ps-0 d-flex justify-content-around px-2">
+                              <a href="javascript:void(0);" class="text-muted fw-bold"
+                                 data-dz-name>{{ fileService.mFile.name }}</a>
+                              <p class="mb-0" data-dz-size>{{ fileService.mFile.size }} KB</p>
+                            </div>
+                            <div class="col-auto">
+                              <!-- Button -->
+                              <a href="javascript:void(0)" (click)="clearUpload()"
+                                 class="btn btn-link btn-lg text-muted" data-dz-remove>
+                                <i class="dripicons-cross"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  }
+                  <!-- end file preview template -->
+                </div>
+              </div>
+            </div>
+
+            @if (team().logo) {
+              <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop d-flex flex-column">
+                <p>Original Image</p>
+                <div class="upload-preview">
+                  <div class="card mt-1 mb-0 shadow-none border">
+                    <div class="p-2">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <img [src]="team().logo" class="avatar-xl rounded bg-light" alt=""
+                               style="width: 200px; height: 200px; object-fit: contain;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+          <button class="btn btn-primary" (click)="add()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="sportsmagazine-main-section sportsmagazine-player-listfull">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sportsmagazine-player sportsmagazine-player-list">
+          <ul class="row">
+            @for (l of data.contents; track l) {
+              <li class="col-md-6" (click)="detail(l)">
+                <figure><a href="javascript:void(0)">
+                  <img [src]="l.logo" alt="" style="width: 268px; height: 277px; object-fit: cover;">
+                  <i class="fa fa-link"></i></a>
+                </figure>
+                <div class="sportsmagazine-player-list-text" style="width: 268px; height: 277px;">
+                  <a href="javascript:void(0)" class="sportsmagazine-forword-btn">{{ l.matchCount }} matches</a>
+                  <a href="javascript:void(0)"
+                     class="sportsmagazine-forword-btn mx-3">From {{ l.minPrice | currency :'VND' }} price</a>
+                  <h5><a href="javascript:void(0)">{{ l.name }}</a></h5>
+                  <ul class="sportsmagazine-player-social">
+                    <li>
+                      <a href="javascript:void(0)" class="sportsmagazine-readmore-btn">{{ l.matchToday }}
+                        today</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" class="sportsmagazine-readmore-btn">{{ l.matchTomorrow }}
+                        later</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" class="sportsmagazine-readmore-btn">{{ l.matchLive }}  live</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" class="sportsmagazine-readmore-btn">{{ l.matchPending }}
+                        pending</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+        <!--// Pagination \\-->
+        <div class="sportsmagazine-pagination">
+          <div class="page-numbers">
+            <pagination [totalItems]="data.totalRecords" [(ngModel)]="data.page" [itemsPerPage]="data.size"
+                        [maxSize]="5"
+                        [boundaryLinks]="true" [directionLinks]="true" (pageChanged)="onPageChange($event)">
+            </pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

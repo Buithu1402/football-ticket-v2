@@ -1,0 +1,93 @@
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-12">
+      <div class="mdc-card">
+        <h6 class="card-title">{{ title() }}</h6>
+        <div class="template-demo">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form mb-3 w-100">
+                <label>Home team</label>
+                <ng-select [items]="teams()"
+                           name="homeTeam"
+                           class="w-100"
+                           bindLabel="name"
+                           bindValue="teamId"
+                           groupBy="selectedAllGroup"
+                           placeholder="Select team"
+                           [(ngModel)]="match().homeTeamId">
+                </ng-select>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form mb-3 w-100">
+                <label>Away team</label>
+                <ng-select [items]="teams()"
+                           class="w-100"
+                           name="awayTeam"
+                           bindLabel="name"
+                           bindValue="teamId"
+                           groupBy="selectedAllGroup"
+                           [selectableGroup]="true"
+                           placeholder="Select team"
+                           [(ngModel)]="match().awayTeamId">
+
+                </ng-select>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form mb-3 w-100">
+                <label>Stadium</label>
+                <ng-select [items]="stadiums()"
+                           name="homeTeam"
+                           class="w-100"
+                           bindLabel="stadiumName"
+                           bindValue="stadiumId"
+                           groupBy="selectedAllGroup"
+                           placeholder="Select Stadium"
+                           [(ngModel)]="match().stadiumId">
+                </ng-select>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form mb-3 w-100">
+                <label>Match date</label>
+                <input type="text"
+                       placeholder="Start date"
+                       placement="left"
+                       name="matchDate"
+                       [(ngModel)]="matchDate"
+                       [minDate]="today"
+                       class="form-control"
+                       [bsConfig]="config"
+                       bsDatepicker>
+              </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+              <div class="form mb-3 w-100">
+                <label>League</label>
+                <ng-select [items]="leagues()"
+                           class="w-100"
+                           name="laegue"
+                           bindLabel="name"
+                           bindValue="leagueId"
+                           groupBy="selectedAllGroup"
+                           [selectableGroup]="true"
+                           placeholder="Select team"
+                           [(ngModel)]="match().leagueId">
+
+                </ng-select>
+              </div>
+            </div>
+          </div>
+
+
+          <button class="btn btn-primary" (click)="add()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

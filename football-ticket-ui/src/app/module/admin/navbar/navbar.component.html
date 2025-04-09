@@ -1,0 +1,23 @@
+<header class="mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row">
+    <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
+      <span class="mdc-top-app-bar__title">ADMIN</span>
+    </div>
+    <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__section-right">
+      <div class="menu-button-container menu-profile d-flex justify-content-between">
+        <button class="mdc-button mdc-menu-button">
+                <span class="d-flex align-items-center">
+                  <span class="figure">
+                    <img ngSrc="assets/images/logo_barca_50x50.png" alt="user" style="height: 100%;" class="user"
+                         height="50" width="50">
+                  </span>
+                  <span class="user-name">ADMIN</span>
+                </span>
+        </button>
+
+        <button class="mdc-button" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</header>

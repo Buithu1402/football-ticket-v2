@@ -1,0 +1,52 @@
+<div class="mdc-layout-grid overflow-auto" style="height: 100vh;" id="style-1">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-12">
+      <div class="mdc-card">
+        <h6 class="card-title">{{ title() }}</h6>
+        <div class="template-demo">
+          @for (type of params; track type) {
+            <div class="bg-light p-3 mb-3">
+              <span class="fw-bold">Type: {{ type.typeName }}</span> <br>
+              <span>Current Seat: {{type.currentSeats}}</span>
+              <hr>
+              <div class="mdc-layout-grid__inner">
+                <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
+                  <input class="form-control" id="inputPrice" [ngClass]="{'is-invalid': !type.validPrice}"
+                         [inputMask]="currencyInputMask"
+                         [(ngModel)]="type.priceMask"
+                         (ngModelChange)="validatePrice(type)"
+                         min="0"
+                         name="inputPrice" placeholder="123456VND">
+                  <label for="inputPrice">Price</label>
+                  <div class="invalid-feedback">
+                    Please provide a valid price.
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
+                  <ng-select [items]="type.availableSeats"
+                             bindLabel="seatNumber"
+                             bindValue="seatId"
+                             placeholder="Select seat"
+                             [(ngModel)]="type.seatIds"
+                             (ngModelChange)="calculateSeatAvailabe()"
+                             name="selectSeat"
+                             [multiple]="true"></ng-select>
+                </div>
+
+                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop form-floating">
+                  <textarea class="form-control" placeholder="Description about type" id="areaDescription"
+                            [(ngModel)]="type.description"
+                            name="areaDescription"
+                            rows="3"></textarea>
+                  <label for="areaDescription">Description about type <strong>{{ type.typeName }}</strong> </label>
+                </div>
+              </div>
+            </div>
+          }
+          <button class="btn btn-primary mb-3" (click)="add()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

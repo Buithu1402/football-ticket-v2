@@ -1,0 +1,38 @@
+<article class="card">
+  <div class="container">
+    <div class="card-title">
+      <h2>Payment</h2>
+    </div>
+    <div class="card-body">
+      <div class="payment-type">
+        <h4>Choose payment method below</h4>
+        <div class="types flex justify-space-between">
+          <div class="type" [ngClass]="{'selected': currentType === 'visa'}" (click)="currentType = 'visa'">
+            <div class="logo">
+              <i class="fa fa-credit-card"></i>
+            </div>
+            <div class="text">
+              <p>Pay with Visa</p>
+            </div>
+          </div>
+          <div class="type" [ngClass]="{'selected': currentType === 'vnpay'}" (click)="currentType = 'vnpay'">
+            <div class="logo">
+              <img src="assets/images/vnpay.png" alt="">
+            </div>
+            <div class="text">
+              <p>Pay with VnPay</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-actions flex justify-space-between">
+      <div class="flex-start">
+        <button class="button button-secondary" (click)="bsRef.hide()">Cancel</button>
+      </div>
+      <div class="flex-end">
+        <button class="button button-primary" (click)="click()">Proceed</button>
+      </div>
+    </div>
+  </div>
+</article>
