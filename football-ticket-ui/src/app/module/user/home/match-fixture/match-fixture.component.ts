@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {LIB} from '../../../../share/constant';
 import {HttpClient} from '@angular/common/http';
 import {Match} from '../../../../share/model/Match';
 import {forkJoin} from 'rxjs';

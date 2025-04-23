@@ -9,7 +9,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="leagueName" placeholder="Enter here"
                        [(ngModel)]="stadium().stadiumName">
-                <label for="leagueName">Name</label>
+                <label for="leagueName">Tên</label>
               </div>
             </div>
 
@@ -17,7 +17,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="address" placeholder="Enter here"
                        [(ngModel)]="stadium().address">
-                <label for="address">Address</label>
+                <label for="address">Địa chỉ</label>
               </div>
             </div>
           </div>
@@ -37,7 +37,7 @@
                       </div>
                       <h5 class="text-dark" (drop)="fileService.handleDrop($event)"
                           (dragover)="fileService.allowDrop($event)">
-                        Drag and drop file here
+                        Kéo thả hoặc nhấp để tải lên
                       </h5>
                       <p>Or</p>
                       <div class="upload-btn-wrapper">
@@ -101,7 +101,7 @@
         </div>
       </div>
       <div class="mdc-card">
-        <h6 class="card-title">Seat</h6>
+        <h6 class="card-title">Ghế</h6>
         @if (this.isUpdate()) {
           <div class="template-demo mb-2">
             <h6 class="card-title">Current seat:</h6>
@@ -119,7 +119,7 @@
                 <div class="form-floating mb-3 w-100">
                   <input type="text" class="form-control" [id]="'prefix' + ids" placeholder="Enter here"
                          [(ngModel)]="s.prefix">
-                  <label [for]="'prefix' + ids">Prefix Seat</label>
+                  <label [for]="'prefix' + ids">Tiền tố</label>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@
                 <div class="form-floating mb-3 w-100">
                   <input type="text" class="form-control" [id]="'start' + ids" placeholder="Enter here"
                          [(ngModel)]="s.start">
-                  <label [for]="'start'+ids">Start</label>
+                  <label [for]="'start'+ids">Bắt đầu</label>
                 </div>
               </div>
 
@@ -135,7 +135,7 @@
                 <div class="form-floating mb-3 w-100">
                   <input type="text" class="form-control" [id]="'end'+ids" placeholder="Enter here"
                          [(ngModel)]="s.end">
-                  <label [for]="'end'+ids">End</label>
+                  <label [for]="'end'+ids">Kết thúc</label>
                 </div>
               </div>
 
@@ -146,7 +146,7 @@
                       <option [value]="ty.typeId">{{ ty.name }}</option>
                     }
                   </select>
-                  <label [for]="'type'+ids">Type</label>
+                  <label [for]="'type'+ids">Loại</label>
                 </div>
               </div>
             </div>
@@ -155,8 +155,8 @@
       </div>
 
       <div class="btn btn-group">
-        <button class="btn btn-primary me-3" (click)="submit()">Submit</button>
-        <button class="btn btn-secondary" (click)="addRowSeat()">Add Row Seat</button>
+        <button class="btn btn-primary me-3" (click)="submit()">Nộp</button>
+        <button class="btn btn-secondary" (click)="addRowSeat()">Thêm hàng ghế</button>
       </div>
     </div>
   </div>

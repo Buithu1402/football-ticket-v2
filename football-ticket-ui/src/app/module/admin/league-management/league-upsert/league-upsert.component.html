@@ -9,7 +9,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="leagueName" placeholder="Enter here"
                        [(ngModel)]="league().name">
-                <label for="leagueName">Name</label>
+                <label for="leagueName">Tên</label>
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@
                       </div>
                       <h5 class="text-dark" (drop)="fileService.handleDrop($event)"
                           (dragover)="fileService.allowDrop($event)">
-                        Drag and drop file here
+                        Kéo thả tệp vào đây
                       </h5>
                       <p>Or</p>
                       <div class="upload-btn-wrapper">
@@ -90,7 +90,7 @@
               </div>
             </div>
           </div>
-          <button class="btn btn-primary" (click)="addLeague()">Submit</button>
+          <button class="btn btn-primary" (click)="addLeague()">Nộp</button>
         </div>
       </div>
     </div>

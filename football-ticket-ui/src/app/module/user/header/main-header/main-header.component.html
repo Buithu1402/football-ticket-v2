@@ -1,8 +1,11 @@
 <div class="sportsmagazine-main-header">
   <div class="container">
     <div class="row">
-      <aside class="col-md-3"><a href="javascript:void(0)" (click)="navigate('/', 0)" class="sportsmagazine-logo-two">
-        <img ngSrc="assets/images/logo-2.png" alt="" height="58" width="163"></a>
+      <aside class="col-md-3">
+        <a href="javascript:void(0)" (click)="navigate('/', 0)" class="sportsmagazine-logo-two">
+          <img srcset="assets/images/logo-2.png" width="163" height="58" alt="Logo" fetchpriority="high"
+               src="assets/images/logo-2.png"/>
+        </a>
       </aside>
       <aside class="col-md-9">
         <ul class="header-info">
@@ -18,7 +21,7 @@
           </li>
           <li>
             <i class="icon-people22"></i>
-            <span>Support 24/7</span>
+            <span>Hỗ trợ 24/7</span>
             <small>{{ 'thuthu14022003@gmail.com' }}</small>
           </li>
         </ul>
@@ -43,7 +46,7 @@
                         <div class="col-md-6">
                           <h4>{{ menu.title }}</h4>
                           <ul class="sportsmagazine-megalist">
-                            @for (child of menu.children; track child;) {
+                            @for (child of menu.children; track child; ) {
                               <li>
                                 <a href="javascript:void(0)" (click)="navigate(child.link, idx)">{{ child.name }}</a>
                               </li>

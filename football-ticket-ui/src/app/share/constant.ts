@@ -33,11 +33,11 @@ export const LIB = {
     lib2: ['../../../share/styles/css/user-style.scss'],
     script1: [
       "/app/share/styles/script/bootstrap.min.js",
-      "/app/share/styles/script/jquery.countdown.min.js",
-      "/app/share/styles/script/fancybox.pack.js",
-      "/app/share/styles/script/isotope.min.js",
-      "/app/share/styles/script/progressbar.js",
-      "/app/share/styles/script/counter.js",
+      // "/app/share/styles/script/jquery.countdown.min.js",
+      // "/app/share/styles/script/fancybox.pack.js",
+      // "/app/share/styles/script/isotope.min.js",
+      // "/app/share/styles/script/progressbar.js",
+      // "/app/share/styles/script/counter.js",
     ]
   },
   admin: {

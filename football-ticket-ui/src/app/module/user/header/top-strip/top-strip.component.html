@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <aside class="col-md-6">
-        <span><small>Latest News</small> <i class="fa fa-caret-right"></i></span>
+        <span><small>Tin mới</small> <i class="fa fa-caret-right"></i></span>
         <div class="sportsmagazine-ticker-slide">
           <div class="sportsmagazine-ticker-slide-text"></div>
           <div class="sportsmagazine-ticker-slide-text"></div>
@@ -14,26 +14,26 @@
             <li>
               <a href="javascript:void(0)" routerLinkActive="/login-register" routerLink="/login-register">
                 <i class="fa fa-user"></i>
-                Register Now
+                Đăng ký
               </a>
             </li>
             <li>
               <a href="javascript:void(0)" routerLinkActive="/login-register" routerLink="/login-register">
                 <i class="fa fa-sign-in"></i>
-                Log In
+                Đăng nhập
               </a>
             </li>
           } @else {
             <li>
               <a href="javascript:void(0)" routerLinkActive="active" routerLink="/history">
                 <i class="fa fa-user"></i>
-                History
+                Lịch sử
               </a>
             </li>
             <li>
               <a href="javascript:void(0)" (click)="authService.logout()">
                 <i class="fa fa-sign-in"></i>
-                Log Out
+                Đăng xuất
               </a>
             </li>
           }

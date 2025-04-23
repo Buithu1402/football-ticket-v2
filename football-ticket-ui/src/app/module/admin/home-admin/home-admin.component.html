@@ -2,10 +2,10 @@
   <div class="mdc-layout-grid__inner">
     <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
       <div class="mdc-card p-0">
-        <h6 class="card-title card-padding pb-0">Revenue</h6>
+        <h6 class="card-title card-padding pb-0">Doanh thu</h6>
         <div class="d-flex justify-content-end bg-light">
           <div class="form ms-3 me-2">
-            <label>From date</label>
+            <label>Từ</label>
             <input type="text"
                    placeholder="Start date"
                    placement="left"
@@ -16,7 +16,7 @@
                    bsDatepicker>
           </div>
           <div class="form ms-3 me-2">
-            <label>To date</label>
+            <label>Đến</label>
             <input type="text"
                    placeholder="Start date"
                    placement="left"
@@ -28,15 +28,15 @@
           </div>
 
           <div class="form ms-3 me-2">
-            <label>Type</label>
+            <label>Loại</label>
             <select name="type" class="form-select" [(ngModel)]="type">
-              <option value="D">Day</option>
-              <option value="M">Month</option>
+              <option value="D">Ngày</option>
+              <option value="M">Tháng</option>
             </select>
           </div>
 
           <div class="form ms-3 me-2 d-flex align-items-end">
-            <button class="btn btn-primary" (click)="submit()">Submit</button>
+            <button class="btn btn-primary" (click)="submit()">Nộp</button>
           </div>
         </div>
         <div class="border border-primary m-3 rounded-3" style="min-height: 400px;">
@@ -67,7 +67,7 @@
 
           @if (!barChartDataRevenueLeague?.labels?.length && !barChartDataRevenueDayOrMonth?.labels?.length) {
             <div class="text-center p-5">
-              <h5>No data found</h5>
+              <h5>Không có dữ liệu</h5>
             </div>
           }
         </div>
@@ -75,18 +75,18 @@
     </div>
     <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
       <div class="mdc-card p-0">
-        <h6 class="card-title card-padding pb-0">Statistic by League</h6>
+        <h6 class="card-title card-padding pb-0">Thống kê bởi giải</h6>
         <div class="table-responsive">
           <table class="table">
             <thead>
             <tr>
-              <th>No</th>
-              <th class="text-left">League name</th>
+              <th>Thứ tự</th>
+              <th class="text-left">Tên giải</th>
               <th>Logo</th>
-              <th>Total match</th>
-              <th>Complete match</th>
-              <th>Pending match</th>
-              <th>Live match</th>
+              <th>Tổng trận</th>
+              <th>Trận kết thúc</th>
+              <th>Trận sắp diễn ra</th>
+              <th>Trận đang diễn ra</th>
             </tr>
             </thead>
             <tbody>
@@ -104,7 +104,7 @@
                 </tr>
               } @empty {
                 <tr>
-                  <td colspan="9" class="text-center">No league found.</td>
+                  <td colspan="9" class="text-center">Không có dữ liệu</td>
                 </tr>
               }
             </tbody>
@@ -115,16 +115,16 @@
 
     <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
       <div class="mdc-card p-0">
-        <h6 class="card-title card-padding pb-0">Statistic ticket of match</h6>
+        <h6 class="card-title card-padding pb-0">Thống kê theo trận đấu</h6>
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
             <tr>
-              <th style="width: 10%;">No</th>
-              <th style="width: auto;" class="text-center">Match</th>
-              <th style="width: 10%;">Total</th>
-              <th style="width: 10%;">Total sell</th>
-              <th style="width: 10%;">Total remain</th>
+              <th style="width: 10%;">Thứ tự</th>
+              <th style="width: auto;" class="text-center">Trận đấu</th>
+              <th style="width: 10%;">Tổng</th>
+              <th style="width: 10%;">Tổng vé bán</th>
+              <th style="width: 10%;">Tổng vé còn lại</th>
             </tr>
             </thead>
             <tbody>
@@ -152,7 +152,7 @@
                 </tr>
               } @empty {
                 <tr>
-                  <td colspan="9" class="text-center">No match found.</td>
+                  <td colspan="9" class="text-center">Không có dữ liệu.</td>
                 </tr>
               }
             </tbody>

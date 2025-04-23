@@ -1,7 +1,7 @@
 INSERT INTO system_settings (name, value, created_at, updated_at) VALUES ('CLIENT_GOOGLE_ID', '', '2025-02-05 04:16:44', '2025-02-05 04:16:44');
 INSERT INTO system_settings (name, value, created_at, updated_at) VALUES ('CLIENT_GOOGLE_SECRET', '', '2025-02-05 04:16:44', '2025-02-05 04:16:44');
 INSERT INTO system_settings (name, value, created_at, updated_at) VALUES ('authorizedRedirectUris', 'http://localhost:4200/#/oauth2/redirect', '2025-02-05 04:19:31', '2025-02-18 07:35:05');
-INSERT INTO system_settings (name, value, created_at, updated_at) VALUES ('email.host', 'smtp.gmail.com', '2025-02-05 06:05:57', '2025booking_seat-02-05 06:05:57');
+INSERT INTO system_settings (name, value, created_at, updated_at) VALUES ('email.host', 'smtp.gmail.com', '2025-02-05 06:05:57', '2025-02-05 06:05:57');
 INSERT INTO system_settings (name, value, created_at, updated_at) VALUES ( 'email.port', '587', '2025-02-05 06:05:57', '2025-02-05 06:05:57');
 INSERT INTO system_settings (name, value, created_at, updated_at) VALUES ( 'email.username', '', '2025-02-05 06:05:57', '2025-02-05 06:05:57');
 INSERT INTO system_settings (name, value, created_at, updated_at) VALUES ( 'email.password', '', '2025-02-05 06:05:57', '2025-02-05 06:05:57');

@@ -21,14 +21,14 @@ export class ThankYouComponent implements OnInit {
     protected activatedRoute: ActivatedRoute,
     protected toast: ToastrService
   ) {
-    this.storeService.setTitle('Thank you');
+    this.storeService.setTitle('Cảm ơn');
     this.storeService.setBreadCrumb([
       {
-        label: 'Home',
+        label: 'Trang chủ',
         url: '/home'
       },
       {
-        label: 'Thank you',
+        label: 'Cảm ơn',
         url: '/thank-you'
       }
     ]);
@@ -67,7 +67,7 @@ export class ThankYouComponent implements OnInit {
         success: isSuccess
       }).subscribe((res: any) => {
         if (!res.success) {
-          this.toast.error('Your booking is failed');
+          this.toast.error('Có lỗi xảy ra trong quá trình xác nhận đơn hàng');
           this.status = 'fail';
         }
       })

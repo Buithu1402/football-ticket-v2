@@ -27,14 +27,14 @@ export class HistoryComponent implements OnInit {
     protected toast: ToastrService,
     protected storeService: StoreService
   ) {
-    this.storeService.setTitle('History');
+    this.storeService.setTitle('Lịch sử');
     this.storeService.setBreadCrumb([
       {
-        label: 'Home',
+        label: 'Trang chủ',
         url: '/'
       },
       {
-        label: 'History',
+        label: 'Lịch sử',
         url: '/history'
       }
     ]);

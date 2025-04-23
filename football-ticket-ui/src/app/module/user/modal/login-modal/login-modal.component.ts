@@ -1,18 +1,15 @@
 import {Component} from '@angular/core';
-import {CONSTANT, LIB} from '../../../../share/constant';
-import {Router, RouterLink, RouterLinkActive} from '@angular/router';
+import {CONSTANT} from '../../../../share/constant';
+import {Router} from '@angular/router';
 import {BsModalRef} from 'ngx-bootstrap/modal';
 import {ToastrService} from 'ngx-toastr';
 import {HttpClient} from '@angular/common/http';
 import {AuthenticationService} from '../../../../share/service/authentication.service';
-import {InputParam} from '../../../../share/model/InputParam';
 import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-login-modal',
   imports: [
-    RouterLink,
-    RouterLinkActive,
     FormsModule
   ],
   templateUrl: './login-modal.component.html',
@@ -38,14 +35,14 @@ export class LoginModalComponent {
   login() {
     let valid = true;
     if (!this.param.email || !this.param.password) {
-      this.toast.warning('Please fill in all fields', 'warning');
+      this.toast.warning('Vui lòng điền đầy đủ thông tin', 'warning');
       valid = false;
     }
     if (valid) {
       this.authService.login(this.param)
         .subscribe(res => {
           if (res.success) {
-            this.toast.success('Login success');
+            this.toast.success('Đăng nhập thành công');
             this.bsRef.hide();
           } else {
             this.toast.error(res.message, 'Error');

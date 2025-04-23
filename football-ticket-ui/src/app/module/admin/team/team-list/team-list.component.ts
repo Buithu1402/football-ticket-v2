@@ -71,8 +71,8 @@ export class TeamListComponent implements OnInit {
     this.bsModal.show(ConfirmModalComponent, {
       class: 'modal-dialog-centered modal-lg',
       initialState: {
-        title: signal('Delete Team'),
-        message: signal(`Do you want to delete team ${item.name}?`)
+        title: signal('Xóa đội bóng'),
+        message: signal(`Bạn có muốn xóa đội ${item.name}?`)
       }
     }).content?.eventOut.subscribe(res => {
       if (res) {

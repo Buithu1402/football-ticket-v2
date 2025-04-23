@@ -6,7 +6,6 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TransferFileService} from '../../../../share/service/transfer-file.service';
 import {ResponseData} from '../../../../share/model/response-data.model';
-import {StadiumSeatComponent} from '../stadium-seat/stadium-seat.component';
 import {SeatDTO} from '../../../../share/model/SeatDTO';
 
 @Component({
@@ -38,7 +37,7 @@ export class StadiumUpsertComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.isUpdate()) {
-      this.title.set('Update Stadium');
+      this.title.set('Cập nhật sân vận động');
       this.http.get<ResponseData<SeatDTO[]>>(`api/stadium/${this.stadium().stadiumId}/seats`)
         .subscribe(res => {
           if (res.success) {
@@ -60,15 +59,15 @@ export class StadiumUpsertComponent implements OnInit {
 
   submit() {
     if (this.stadium().stadiumName === '') {
-      this.toast.error('Stadium name is required');
+      this.toast.error('Tên sân vận động không được để trống');
       return;
     }
     if (this.stadium().address === '') {
-      this.toast.error('Address is required');
+      this.toast.error('Địa chỉ không được để trống');
       return;
     }
     if (this.stadium().seats.length === 0) {
-      this.toast.error('Seat is required');
+      this.toast.error('Vui lòng thêm ghế');
       return;
     }
     const formData = new FormData();
@@ -79,7 +78,7 @@ export class StadiumUpsertComponent implements OnInit {
     this.http.post<ResponseData<string>>('api/stadium', formData)
       .subscribe(res => {
         if (res.success) {
-          this.toast.success('Success');
+          this.toast.success('Thành công');
           if (this.isUpdate()) {
             this.eventOut.emit(true);
             this.bsRef.hide();

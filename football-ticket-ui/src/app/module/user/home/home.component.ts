@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FixtureSliderComponent} from './fixture-slider/fixture-slider.component';
 import {MatchFixtureComponent} from './match-fixture/match-fixture.component';
 import {OurPartnerComponent} from './our-partner/our-partner.component';
 import {PostComponent} from './post/post.component';
-import {LastResultComponent} from './last-result/last-result.component';
-import {LIB} from '../../../share/constant';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +11,6 @@ import {LIB} from '../../../share/constant';
     MatchFixtureComponent,
     OurPartnerComponent,
     PostComponent,
-    LastResultComponent
   ],
   templateUrl: './home.component.html',
   standalone: true,

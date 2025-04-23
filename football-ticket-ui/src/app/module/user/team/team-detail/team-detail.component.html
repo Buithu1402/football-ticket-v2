@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="sportsmagazine-overview ">
           @if (teamDetail.lastResult) {
-            <h6 class="fw-bold">Last Result</h6>
+            <h6 class="fw-bold">Kết quả:</h6>
             <div class="sportsmagazine-overview-wrap d-flex justify-content-center">
               <div class="sportsmagazine-overview-team-one">
                 <figure><img [src]="teamDetail.lastResult?.homeLogo" alt=""></figure>
@@ -27,20 +27,20 @@
               </div>
             </div>
           }
-          <span class="sportsmagazine-gamestats-btn">About team</span>
+          <span class="sportsmagazine-gamestats-btn">Thông tin</span>
           <div class="sportsmagazine-gamestats d-flex justify-content-center">
             <div class="sportsmagazine-overview-scorecard w-100">
               <table class="table table-striped">
                 <tr>
-                  <td>Name</td>
-                  <td>Established Year</td>
+                  <td>Tên</td>
+                  <td>Năm thành lập</td>
                   <td>Logo</td>
-                  <td>Address</td>
-                  <td>Match played</td>
-                  <td>Win</td>
-                  <td>Draw</td>
-                  <td>Lose</td>
-                  <td>Goal</td>
+                  <td>Địa chỉ</td>
+                  <td>Trận đã đấu</td>
+                  <td>Thắng</td>
+                  <td>Hòa</td>
+                  <td>Thua</td>
+                  <td>Bàn thắng</td>
                 </tr>
                 <tr>
                   <td>{{ teamDetail.teamDetail.name }}</td>
@@ -59,13 +59,13 @@
           </div>
         </div>
         <div class="sportsmagazine-roster-graph sportsmagazine-overview-graph">
-          <h4>Last 5 Match</h4>
+          <h4>Kết quả 5 trận gần nhất</h4>
           <table class="sportsmagazine-client-detail table-5">
             <tr>
-              <th>League</th>
-              <th>Match date</th>
-              <th>Match</th>
-              <th>Score</th>
+              <th>Giải</th>
+              <th>Ngày đấu</th>
+              <th>Trận đấu</th>
+              <th>Tỉ số</th>
             </tr>
 
             @for (m of teamDetail.last5Match; track m) {
@@ -88,7 +88,7 @@
             } @empty {
               <tr>
                 <td colspan="4" class="text-center">
-                  No match found
+                  Không có dữ liệu
                 </td>
               </tr>
             }

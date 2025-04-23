@@ -8,12 +8,8 @@ import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   imports: [
-    MultiMenuComponent,
-    SigleMenuComponent,
     NgOptimizedImage,
     NgClass,
-    RouterLink,
-    RouterLinkActive
   ],
   templateUrl: './sidebar.component.html',
   standalone: true,
@@ -21,26 +17,26 @@ import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
   menuAdmin: MenuAdmin[] = [
-    new MenuAdmin('Dashboard', 'mdi-home-outline', '/admin/home'),
-    new MenuAdmin('User Management', 'mdi-account-group-outline', '/admin/user'),
-    new MenuAdmin('League Management', 'mdi-book-open-page-variant-outline', '/admin/league', [
-      new ChildMenu('List', '/admin/league/list'),
-      new ChildMenu('Create', '/admin/league/upsert'),
+    new MenuAdmin('Trang chủ', 'mdi-home-outline', '/admin/home'),
+    new MenuAdmin('Quản lý người dùng', 'mdi-account-group-outline', '/admin/user'),
+    new MenuAdmin('Quản lý giải đấu', 'mdi-book-open-page-variant-outline', '/admin/league', [
+      new ChildMenu('Danh sách', '/admin/league/list'),
+      new ChildMenu('Thêm', '/admin/league/upsert'),
     ]),
-    new MenuAdmin('Team Management', 'mdi-school-outline', '/admin/team', [
-      new ChildMenu('List', '/admin/team/list'),
-      new ChildMenu('Create', '/admin/team/upsert'),
+    new MenuAdmin('Quản lý đội', 'mdi-school-outline', '/admin/team', [
+      new ChildMenu('Danh sách', '/admin/team/list'),
+      new ChildMenu('Thêm', '/admin/team/upsert'),
     ]),
-    new MenuAdmin('Match Management', 'mdi-school-outline', '/admin/match', [
-      new ChildMenu('List', '/admin/match/list'),
-      new ChildMenu('Create', '/admin/match/upsert')
+    new MenuAdmin('Quản lý trận đấu', 'mdi-school-outline', '/admin/match', [
+      new ChildMenu('Danh sách', '/admin/match/list'),
+      new ChildMenu('Thêm', '/admin/match/upsert')
     ]),
-    new MenuAdmin('Order Management', 'mdi-school-outline', '/admin/order', [
-      new ChildMenu('List', '/admin/order/list'),
+    new MenuAdmin('Quản lý hóa đơn', 'mdi-school-outline', '/admin/order', [
+      new ChildMenu('Danh sách', '/admin/order/list'),
     ]),
-    new MenuAdmin('Stadium Management', 'mdi-school-outline', '/admin/stadium', [
-      new ChildMenu('List', '/admin/stadium/list'),
-      new ChildMenu('Create', '/admin/stadium/upsert'),
+    new MenuAdmin('Quản lý sân vận động', 'mdi-school-outline', '/admin/stadium', [
+      new ChildMenu('Danh sách', '/admin/stadium/list'),
+      new ChildMenu('Thêm', '/admin/stadium/upsert'),
     ])
   ];
 

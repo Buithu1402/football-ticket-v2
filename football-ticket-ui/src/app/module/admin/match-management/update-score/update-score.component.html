@@ -2,7 +2,7 @@
   <div class="mdc-layout-grid__inner">
     <div class="mdc-layout-grid__cell--span-12">
       <div class="mdc-card">
-        <h6 class="card-title">Update score match</h6>
+        <h6 class="card-title">Cập nhật</h6>
         <div class="template-demo">
           <div class="mdc-layout-grid__inner">
             <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
@@ -10,7 +10,7 @@
                      min="0"
                      [(ngModel)]="param.homeScore"
                      name="homeGoal" placeholder="1">
-              <label for="homeGoal">Home goal</label>
+              <label for="homeGoal">Tỉ số đội nhà</label>
             </div>
 
             <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
@@ -18,20 +18,20 @@
                      min="0"
                      [(ngModel)]="param.awayScore"
                      name="awayGoal" placeholder="1">
-              <label for="awayGoal">Away goal</label>
+              <label for="awayGoal">Tỉ số đội khách</label>
             </div>
 
             <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
               <select name="status" id="status" class="form-select" [(ngModel)]="param.status">
-                <option value="pending">Pending</option>
-                <option value="live">Live</option>
-                <option value="completed">Completed</option>
+                <option value="pending">Sắp diễn ra</option>
+                <option value="live">Đang diễn ra</option>
+                <option value="completed">Kết thúc</option>
               </select>
-              <label for="status">Status</label>
+              <label for="status">Trạng thái</label>
             </div>
           </div>
 
-          <button class="btn btn-primary" (click)="update()">Submit</button>
+          <button class="btn btn-primary" (click)="update()">Nộp</button>
         </div>
       </div>
     </div>

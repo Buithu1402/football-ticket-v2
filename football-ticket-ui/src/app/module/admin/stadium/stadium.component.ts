@@ -79,15 +79,15 @@ export class StadiumComponent implements OnInit {
     this.bsModal.show(ConfirmModalComponent, {
       class: 'modal-dialog-centered',
       initialState: {
-        title: signal('Delete Stadium'),
-        message: signal('Are you sure you want to delete this stadium?')
+        title: signal('Xóa sân vận động'),
+        message: signal('Bạn có chắc chắn muốn xóa sân vận động này không?'),
       }
     }).content?.eventOut.subscribe((result: boolean) => {
       if (result) {
         this.http.delete<ResponseData<string>>(`/api/stadium/${item.stadiumId}`)
           .subscribe(res => {
             if (res.success) {
-              this.toast.success('Delete stadium successfully');
+              this.toast.success('Xóa sân vận động thành công');
               this.getData();
             } else {
               this.toast.error(res.message);

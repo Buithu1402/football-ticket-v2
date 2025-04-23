@@ -9,14 +9,14 @@
               <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="teamName" placeholder="Enter here"
                        [(ngModel)]="team().name">
-                <label for="teamName">Team name</label>
+                <label for="teamName">Tên</label>
               </div>
             </div>
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="address" placeholder="Enter here"
                        [(ngModel)]="team().address">
-                <label for="address">Address</label>
+                <label for="address">Địa chỉ</label>
               </div>
             </div>
 
@@ -24,7 +24,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="establishedYear" placeholder="Enter here"
                        [(ngModel)]="team().establishedYear">
-                <label for="establishedYear">Established Year</label>
+                <label for="establishedYear">Năm thành lập</label>
               </div>
             </div>
 
@@ -32,7 +32,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="stadiumName" placeholder="Enter here"
                        [(ngModel)]="team().stadiumName">
-                <label for="stadiumName">Stadium Name</label>
+                <label for="stadiumName">Sân vận động</label>
               </div>
             </div>
 
@@ -40,7 +40,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="number" class="form-control" id="goal" placeholder="Enter here"
                        [(ngModel)]="team().goals">
-                <label for="goal">Goal</label>
+                <label for="goal">Bàn</label>
               </div>
             </div>
 
@@ -48,7 +48,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="number" class="form-control" id="matchPlayed" placeholder="Enter here"
                        [(ngModel)]="team().matchPlayed">
-                <label for="matchPlayed">Match played</label>
+                <label for="matchPlayed">Trận đã chơi</label>
               </div>
             </div>
 
@@ -56,7 +56,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="number" class="form-control" id="win" placeholder="Enter here"
                        [(ngModel)]="team().win">
-                <label for="win">Win</label>
+                <label for="win">Thắng</label>
               </div>
             </div>
 
@@ -64,7 +64,7 @@
               <div class="form-floating mb-3 w-100">
                 <input type="number" class="form-control" id="loss" placeholder="Enter here"
                        [(ngModel)]="team().losses">
-                <label for="loss">Loss</label>
+                <label for="loss">Thua</label>
               </div>
             </div>
 
@@ -85,7 +85,7 @@
                       </div>
                       <h5 class="text-dark" (drop)="fileService.handleDrop($event)"
                           (dragover)="fileService.allowDrop($event)">
-                        Drag and drop file here
+                        Kéo thả tệp vào đây
                       </h5>
                       <p>Or</p>
                       <div class="upload-btn-wrapper">
@@ -147,7 +147,7 @@
               </div>
             }
           </div>
-          <button class="btn btn-primary" (click)="add()">Submit</button>
+          <button class="btn btn-primary" (click)="add()">Nộp</button>
         </div>
       </div>
     </div>

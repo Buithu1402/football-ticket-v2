@@ -26,7 +26,7 @@ import {StadiumDTO} from '../../../../share/model/StadiumDTO';
   styleUrl: './match-upsert.component.scss',
 })
 export class MatchUpsertComponent implements OnInit {
-  title = signal('Create Match');
+  title = signal('Tạo mới trận đấu');
   match = signal(new Match());
   teams = signal<Team[]>([]);
   stadiums = signal<StadiumDTO[]>([]);
@@ -78,7 +78,7 @@ export class MatchUpsertComponent implements OnInit {
 
   add() {
     if (this.match().homeTeamId === this.match().awayTeamId) {
-      this.toast.error('Home team and away team must be different');
+      this.toast.error('Đội nhà và đội khách không được trùng nhau');
       return;
     }
     this.match().matchDate = this.dateService.getFormatDate(this.matchDate(), 'yyyy-MM-dd') || '';
@@ -89,7 +89,7 @@ export class MatchUpsertComponent implements OnInit {
     this.http.post<ResponseData<string>>('api/match/upsert', this.match())
       .subscribe(res => {
         if (res.success) {
-          this.toast.success('Create match successfully');
+          this.toast.success('Thành công');
           this.match.set(new Match());
           this.bsRef.hide();
         } else {

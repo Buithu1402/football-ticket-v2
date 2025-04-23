@@ -6,8 +6,8 @@
         <div class="template-demo">
           @for (type of params; track type) {
             <div class="bg-light p-3 mb-3">
-              <span class="fw-bold">Type: {{ type.typeName }}</span> <br>
-              <span>Current Seat: {{type.currentSeats}}</span>
+              <span class="fw-bold">Loại: {{ type.typeName }}</span> <br>
+              <span>Ghế: {{type.currentSeats}}</span>
               <hr>
               <div class="mdc-layout-grid__inner">
                 <div class="form-floating mb-3 mdc-layout-grid__cell--span-6-desktop">
@@ -19,7 +19,7 @@
                          name="inputPrice" placeholder="123456VND">
                   <label for="inputPrice">Price</label>
                   <div class="invalid-feedback">
-                    Please provide a valid price.
+                    Vui lòng nhập giá vé
                   </div>
                 </div>
 
@@ -39,12 +39,12 @@
                             [(ngModel)]="type.description"
                             name="areaDescription"
                             rows="3"></textarea>
-                  <label for="areaDescription">Description about type <strong>{{ type.typeName }}</strong> </label>
+                  <label for="areaDescription">Mô tả <strong>{{ type.typeName }}</strong> </label>
                 </div>
               </div>
             </div>
           }
-          <button class="btn btn-primary mb-3" (click)="add()">Submit</button>
+          <button class="btn btn-primary mb-3" (click)="add()">Nộp</button>
         </div>
       </div>
     </div>

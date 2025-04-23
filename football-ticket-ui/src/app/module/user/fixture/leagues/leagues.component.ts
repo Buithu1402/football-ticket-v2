@@ -32,7 +32,7 @@ export class LeaguesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.storeService.setTitle('League list');
+    this.storeService.setTitle('Danh sách giải đấu');
     this.storeService.setBreadCrumb([
       {
         label: 'Home',

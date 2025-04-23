@@ -129,7 +129,7 @@ export class FixtureDetailComponent implements OnInit, OnDestroy {
 
   buyTicket() {
     if (!this.authService.isLoggedIn) {
-      this.toast.warning('Please login to buy ticket');
+      this.toast.warning('Vui lòng đăng nhập');
       this.bsModal.show(LoginModalComponent, {
         class: 'modal-lg modal-dialog-centered'
       });
@@ -137,12 +137,12 @@ export class FixtureDetailComponent implements OnInit, OnDestroy {
     }
 
     if (this.paramBooking.typeId == 0) {
-      this.toast.warning('Please select ticket type');
+      this.toast.warning('Vui lòng chọn loại vé');
       return;
     }
 
     if (this.paramBooking.seatIds.length == 0) {
-      this.toast.warning('Please select seat');
+      this.toast.warning('Vui lòng chọn ghế');
       return;
     }
 
@@ -159,7 +159,7 @@ export class FixtureDetailComponent implements OnInit, OnDestroy {
           .subscribe(res => {
             this.getMatchDetail();
             if (res.success) {
-              this.toast.success('Booking successfully');
+              this.toast.success('Thành công');
               window.location.href = res.data;
             } else {
               this.toast.error(res.message);

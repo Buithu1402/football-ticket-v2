@@ -1,18 +1,16 @@
 import {Component, EventEmitter, OnInit, Output, signal} from '@angular/core';
 import {TransferFileService} from '../../../../share/service/transfer-file.service';
-import {Team, TeamPayload} from '../../../../share/model/Team';
+import {Team} from '../../../../share/model/Team';
 import {HttpClient} from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
 import {BsModalRef} from 'ngx-bootstrap/modal';
 import {FormsModule} from '@angular/forms';
 import {ResponseData} from '../../../../share/model/response-data.model';
-import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-team-upsert',
   imports: [
     FormsModule,
-    NgClass
   ],
   templateUrl: './team-upsert.component.html',
   standalone: true,
@@ -35,7 +33,7 @@ export class TeamUpsertComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.isUpdate()) {
-      this.title.set('Update Team');
+      this.title.set('Cập nhật đội bóng');
     }
   }
 
@@ -47,7 +45,7 @@ export class TeamUpsertComponent implements OnInit {
     let valid = true;
     Object.entries(this.team()).forEach(([key, value]) => {
       if (['name', 'stadiumName', 'address', 'establishedYear'].includes(key) && !value) {
-        this.toast.error(`${key} is required`);
+        this.toast.error(`${key} không được để trống`);
         valid = false;
       }
     });
@@ -61,8 +59,8 @@ export class TeamUpsertComponent implements OnInit {
         .subscribe(res => {
           if (res.success) {
             this.toast.success(this.isUpdate()
-              ? 'Update team successfully'
-              : 'Create team successfully');
+              ? 'Cập nhật đội bóng thành công'
+              : 'Thêm đội bóng thành công');
             this.bsRef.hide();
             this.team.set(new Team());
             this.clearUpload();

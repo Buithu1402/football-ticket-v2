@@ -3,7 +3,7 @@
     <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
       <div class="mdc-card p-0">
         <div class="d-flex justify-content-between align-items-center py-0 pe-2">
-          <h6 class="card-title card-padding text-dark h-50">List Match</h6>
+          <h6 class="card-title card-padding text-dark h-50">Danh sách trận đấu</h6>
           <input type="text" name="search" class="form-control h-50 w-75" placeholder="Search" [(ngModel)]="param.key"
                  (keyup)="searchData()">
         </div>
@@ -11,14 +11,14 @@
           <table class="table">
             <thead>
             <tr>
-              <th class="text-left">No</th>
-              <th class="text-left">Home team</th>
-              <th class="text-left">Away team</th>
-              <th class="text-left">Match Date</th>
-              <th class="text-left">Stadium name</th>
-              <th class="text-left">Score</th>
-              <th class="text-left">Status</th>
-              <th class="text-left">Action</th>
+              <th class="text-left">Thứ tự</th>
+              <th class="text-left">Đội nhà</th>
+              <th class="text-left">Đội khách</th>
+              <th class="text-left">Ngày đá</th>
+              <th class="text-left">Sân vận động</th>
+              <th class="text-left">Tỉ số</th>
+              <th class="text-left">Trạng thái</th>
+              <th class="text-left">#</th>
             </tr>
             </thead>
             <tbody>
@@ -45,11 +45,11 @@
                   </td>
                   <td class="text-left align-middle">
                     @if (u.status.toLowerCase() === 'pending') {
-                      <span class="badge bg-warning">Pending</span>
+                      <span class="badge bg-warning">Sắp diễn ra</span>
                     } @else if (u.status.toLowerCase() === 'live') {
-                      <span class="badge bg-info">Live</span>
+                      <span class="badge bg-info">Đang diễn ra</span>
                     } @else if (u.status.toLowerCase() === 'completed') {
-                      <span class="badge bg-success">Finished</span>
+                      <span class="badge bg-success">Kết thúc</span>
                     }
                   </td>
                   <td class="text-left align-middle">

@@ -11,12 +11,8 @@ import {BsModalRef} from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-update-score',
   imports: [
-    BsDatepickerDirective,
-    BsDatepickerInputDirective,
-    NgSelectComponent,
     ReactiveFormsModule,
     FormsModule,
-    NgClass
   ],
   templateUrl: './update-score.component.html',
   standalone: true,
@@ -46,7 +42,7 @@ export class UpdateScoreComponent implements OnInit {
     this.http.post<ResponseData<any>>(`/api/match/score`, this.param)
       .subscribe(res => {
         if (res.success) {
-          this.toast.success('Update score success');
+          this.toast.success('Cập nhật thành công');
           this.eventOut.emit();
         } else {
           this.toast.error(res.message);

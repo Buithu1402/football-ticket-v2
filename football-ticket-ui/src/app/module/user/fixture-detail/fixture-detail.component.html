@@ -18,24 +18,24 @@
             <span class="countdown-row countdown-show4">
               <span class="countdown-section">
               <span class="countdown-amount">{{ days }}</span>
-              <span class="countdown-period">Days</span>
+              <span class="countdown-period">Ngày</span>
               </span>
               <span class="countdown-section">
                 <span class="countdown-amount">{{ hours }}</span>
-                <span class="countdown-period">Hours</span>
+                <span class="countdown-period">Giờ</span>
               </span>
               <span class="countdown-section">
                 <span class="countdown-amount">{{ minutes }}</span>
-                <span class="countdown-period">Minutes</span>
+                <span class="countdown-period">Phút</span>
               </span>
               <span class="countdown-section">
                 <span class="countdown-amount">{{ seconds }}</span>
-                <span class="countdown-period">Seconds</span>
+                <span class="countdown-period">Giây</span>
               </span>
             </span>
             </div>
           } @else {
-            <span>Final Score</span>
+            <span>Tỉ số</span>
             <p><span>{{ matchDetail.homeGoal }}</span> <small>:</small>{{ matchDetail.awayGoal }}</p>
           }
         </div>
@@ -56,7 +56,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <div class="sportsmagazine-section-heading"><h2>Match Detail</h2></div>
+        <div class="sportsmagazine-section-heading"><h2>Chi tiết trận đấu</h2></div>
         <ul class="sportsmagazine-match-info">
           <li>
             <i class="fa fa-calendar-o"></i>
@@ -80,7 +80,7 @@
             <i class="fa fa-ticket"></i>
             <select class="form-select py-0" style="height: 32px;" [(ngModel)]="paramBooking.typeId"
                     (ngModelChange)="changeType()" name="typeId">
-              <option value="0">Select type</option>
+              <option value="0">Chọn loại</option>
               @for (type of matchDetail.types; track type) {
                 <option [value]="type.typeId">{{ type.name }}</option>
               }
@@ -98,7 +98,7 @@
                        [multiple]="true"></ng-select>
           </div>
           <li class="ms-5">
-            <button class="btn-gradient-custom" style="height: 32px;" (click)="buyTicket()">Buy Ticket</button>
+            <button class="btn-gradient-custom" style="height: 32px;" (click)="buyTicket()">Mua</button>
           </li>
         </ul>
         <div class="sportsmagazine-rich-editor">
@@ -108,7 +108,7 @@
             </p>
           } @else {
             <p>
-              No description
+              Trống
             </p>
           }
           <div>

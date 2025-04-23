@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {NgOptimizedImage} from '@angular/common';
-import {LIB} from '../../../../share/constant';
 
 @Component({
   selector: 'app-our-partner',

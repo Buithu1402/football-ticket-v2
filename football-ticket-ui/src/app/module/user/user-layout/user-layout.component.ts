@@ -6,12 +6,9 @@ import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import {StoreService} from '../../../share/service/store.service';
 import {SuperHeaderComponent} from '../header/super-header/super-header.component';
 import {SearchModalComponent} from '../modal/search-modal/search-modal.component';
-import {SignupModalComponent} from '../modal/signup-modal/signup-modal.component';
-import {LoginModalComponent} from '../modal/login-modal/login-modal.component';
 import {AuthenticationService} from '../../../share/service/authentication.service';
 import {NgClass} from '@angular/common';
 import {LibServiceService} from '../../../share/service/lib-service.service';
-import {distinctUntilChanged} from 'rxjs';
 
 @Component({
   selector: 'app-user-layout',
@@ -22,8 +19,6 @@ import {distinctUntilChanged} from 'rxjs';
     RouterOutlet,
     SuperHeaderComponent,
     SearchModalComponent,
-    SignupModalComponent,
-    LoginModalComponent,
     NgClass
   ],
   templateUrl: './user-layout.component.html',

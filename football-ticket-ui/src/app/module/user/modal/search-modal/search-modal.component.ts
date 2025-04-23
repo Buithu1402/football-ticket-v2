@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {LIB} from '../../../../share/constant';
 
 @Component({
   selector: 'app-search-modal',

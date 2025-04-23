@@ -3,7 +3,7 @@
     <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
       <div class="mdc-card p-0">
         <div class="d-flex justify-content-between align-items-center py-0 pe-2">
-          <h6 class="card-title card-padding text-dark h-50">Booking list</h6>
+          <h6 class="card-title card-padding text-dark h-50">Danh sách hóa đơn</h6>
           <input type="text" name="search" class="form-control h-50 w-75" placeholder="Search" [(ngModel)]="keyword"
                  (keyup)="searchData()">
         </div>
@@ -11,16 +11,16 @@
           <table class="table table-main table-striped table-bordered table-hover">
             <thead>
             <tr>
-              <th class="text-left">No</th>
-              <th class="text-left">Email / Name</th>
-              <th class="text-left">Order Ref</th>
-              <th class="text-left">Type</th>
-              <th class="text-center">Match</th>
-              <th class="text-left">Time</th>
-              <th class="text-left">Price</th>
-              <th class="text-left">Seats</th>
-              <th class="text-left">Status</th>
-              <th class="text-left">Payment method</th>
+              <th class="text-left">Thứ tự</th>
+              <th class="text-left">Email / Tên</th>
+              <th class="text-left">Mã hóa đơn</th>
+              <th class="text-left">Loại</th>
+              <th class="text-center">Trận đấu</th>
+              <th class="text-left">Thời gian</th>
+              <th class="text-left">Giá</th>
+              <th class="text-left">Ghế</th>
+              <th class="text-left">Trạng thái</th>
+              <th class="text-left">Phương thức thanh toán</th>
             </tr>
             </thead>
             <tbody>
@@ -52,11 +52,11 @@
                   <td class="text-left align-middle"> {{ u.seats }}</td>
                   <td class="text-left align-middle">
                     @if (u.bookingStatus === 'completed') {
-                      <span class="badge badge-success">Success</span>
+                      <span class="badge badge-success">Thành công</span>
                     } @else if (u.bookingStatus === 'cancelled') {
-                      <span class="badge badge-danger">Failed</span>
+                      <span class="badge badge-danger">Thất bại</span>
                     } @else if (u.bookingStatus === 'pending') {
-                      <span class="badge badge-warning">Pending</span>
+                      <span class="badge badge-warning">Đang chờ</span>
                     }
                   </td>
                   <td class="text-left align-middle">{{ u.paymentMethod }}</td>

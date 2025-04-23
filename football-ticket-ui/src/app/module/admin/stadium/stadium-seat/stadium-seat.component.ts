@@ -11,7 +11,6 @@ import {ConfirmModalComponent} from '../../../common/confirm-modal/confirm-modal
 @Component({
   selector: 'app-stadium-seat',
   imports: [
-    PaginationComponent,
     ReactiveFormsModule,
     FormsModule
   ],
@@ -53,8 +52,8 @@ export class StadiumSeatComponent implements OnInit {
     this.bsModal.show(ConfirmModalComponent, {
       class: 'modal-dialog-centered',
       initialState: {
-        title: signal('Delete seat'),
-        message: signal('Are you sure you want to delete this seat?')
+        title: signal('Xóa ghế'),
+        message: signal('Bạn có chắc chắn muốn xóa ghế này không?'),
       }
     }).content?.eventOut.subscribe(res => {
       if (res) {
@@ -62,7 +61,7 @@ export class StadiumSeatComponent implements OnInit {
           .subscribe({
             next: (res) => {
               if (res.success) {
-                this.toast.success(`Delete success seat ${seatId}`);
+                this.toast.success(`Xóa thành công ${seatId}`);
                 this.loadSeats();
               } else {
                 this.toast.error(res.message);

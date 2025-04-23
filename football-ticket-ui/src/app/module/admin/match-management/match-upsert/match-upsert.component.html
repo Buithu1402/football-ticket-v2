@@ -7,7 +7,7 @@
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form mb-3 w-100">
-                <label>Home team</label>
+                <label>Đội nhà</label>
                 <ng-select [items]="teams()"
                            name="homeTeam"
                            class="w-100"
@@ -21,7 +21,7 @@
             </div>
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form mb-3 w-100">
-                <label>Away team</label>
+                <label>Đội khách</label>
                 <ng-select [items]="teams()"
                            class="w-100"
                            name="awayTeam"
@@ -38,7 +38,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form mb-3 w-100">
-                <label>Stadium</label>
+                <label>Sân vận động</label>
                 <ng-select [items]="stadiums()"
                            name="homeTeam"
                            class="w-100"
@@ -53,7 +53,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form mb-3 w-100">
-                <label>Match date</label>
+                <label>Ngày trận đấu</label>
                 <input type="text"
                        placeholder="Start date"
                        placement="left"
@@ -68,7 +68,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form mb-3 w-100">
-                <label>League</label>
+                <label>Giải</label>
                 <ng-select [items]="leagues()"
                            class="w-100"
                            name="laegue"
@@ -85,7 +85,7 @@
           </div>
 
 
-          <button class="btn btn-primary" (click)="add()">Submit</button>
+          <button class="btn btn-primary" (click)="add()">Nộp</button>
         </div>
       </div>
     </div>

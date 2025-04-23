@@ -4,7 +4,7 @@
 
       <div class="col-md-6">
         <div class="sportsmagazine-login-form">
-          <h4>Login To Your Account</h4>
+          <h4>Đăng nhập</h4>
           <form>
             <ul>
               @for (input of inputLoginParams; track input) {
@@ -16,18 +16,18 @@
                     <span><strong class="text-danger">{{ input.message }}</strong></span>
                   }
                   @if (input.name === 'password') {
-                    <a href="javascript:void(0)">Forget Password?</a>
+                    <a href="javascript:void(0)">Quên mật khẩu?</a>
                   }
                 </li>
               }
               <li>
                 <label class="submit-border">
-                  <input type="button" value="Sign In" (click)="login()"><span></span>
+                  <input type="button" value="Đăng nhập" (click)="login()"><span></span>
                 </label>
               </li>
             </ul>
           </form>
-          <ul class="sportsmagazine-login-social">
+          <ul class="sportsmagazine-login-social d-none">
             <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
                    class="color-one"><i class="fa fa-facebook"></i>facebook</a></li>
             <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
@@ -38,12 +38,12 @@
                    class="color-four"><i class="fa fa-instagram"></i>Instagram</a>
             </li>
           </ul>
-          <span>Not A Member Yet ?<a href="#"> Sign - Up Now !</a></span>
+          <span>Chưa có tài khoản ?<a href="javascript:void(0)"> Đăng ký ngay !</a></span>
         </div>
       </div>
       <div class="col-md-6">
         <div class="sportsmagazine-login-form sportsmagazine-register-form">
-          <h4>Register Your Account Now</h4>
+          <h4>Đăng ký</h4>
           <form>
             <ul>
               @for (input of inputRegisterParams; track input) {
@@ -61,7 +61,7 @@
               }
               <li>
                 <label class="submit-border">
-                  <input type="button" value="Sign up" (click)="signUp()"><span></span>
+                  <input type="button" value="Đăng ký" (click)="signUp()"><span></span>
                 </label>
               </li>
             </ul>

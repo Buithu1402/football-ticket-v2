@@ -69,7 +69,7 @@ export class LoginSignupComponent implements OnInit {
     let valid = true;
     this.inputRegisterParams.forEach(param => {
       if (!param.value.trim()) {
-        param.message = `${param.title} is required`;
+        param.message = `${param.title} bắt buộc`;
         valid = false;
       } else {
         param.message = '';
@@ -80,7 +80,7 @@ export class LoginSignupComponent implements OnInit {
       this.http.post<ResponseData<string>>('api/auth/register', param)
         .subscribe(res => {
           if (res.success) {
-            this.showToast('Register success', 'success');
+            this.showToast('Thành công', 'success');
             this.inputRegisterParams.forEach(param => param.value = '');
           } else {
             this.showToast(res.message, 'error');
@@ -93,7 +93,7 @@ export class LoginSignupComponent implements OnInit {
     let valid = true;
     this.inputLoginParams.forEach(param => {
       if (!param.value) {
-        param.message = `${param.title} is required`;
+        param.message = `${param.title} bắt buộc`;
         valid = false;
       } else {
         param.message = '';
@@ -104,7 +104,7 @@ export class LoginSignupComponent implements OnInit {
       this.authService.login(param)
         .subscribe(res => {
           if (res.success) {
-            this.showToast('Login success', 'success');
+            this.showToast('Thành công', 'success');
             this.authService.redirectHome();
           } else {
             this.showToast(res.message, 'error');

@@ -1,7 +1,7 @@
 <div class="col-md-6">
   <div class="sportsmagazine-match-fixture">
     <div class="sportsmagazine-classic-heading">
-      <h2>Match Fixtures</h2>
+      <h2>Trận đấu</h2>
     </div>
     <table class="sportsmagazine-client-detail">
       @for (match of matches; track match) {
@@ -28,15 +28,15 @@
 <div class="col-md-6">
   <div class="sportsmagazine-match-fixture sportsmagazine-team-ranking">
     <div class="sportsmagazine-classic-heading">
-      <h2>Team Rankings</h2>
+      <h2>Bảng xếp hạng</h2>
     </div>
     <table class="sportsmagazine-client-detail">
       <tr>
-        <th>Team Rank</th>
-        <th>Goal</th>
-        <th>Win</th>
-        <th>Loss</th>
-        <th>Draw</th>
+        <th>Vị trí</th>
+        <th>Bàn thắng</th>
+        <th>Thắng</th>
+        <th>Thua</th>
+        <th>Hòa</th>
       </tr>
       @for (team of teams; track team; let idx = $index) {
         <tr>

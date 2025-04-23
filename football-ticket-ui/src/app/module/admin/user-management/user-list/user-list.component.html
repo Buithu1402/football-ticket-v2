@@ -2,17 +2,17 @@
   <div class="mdc-layout-grid__inner">
     <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
       <div class="mdc-card p-0">
-        <h6 class="card-title card-padding pb-0 text-dark">List user</h6>
+        <h6 class="card-title card-padding pb-0 text-dark">Danh sách người dùng</h6>
         <div class="table-responsive">
           <table class="table">
             <thead>
             <tr>
-              <th class="text-left">No</th>
+              <th class="text-left">Thứ tự</th>
               <th class="text-left">Email</th>
-              <th class="text-left">Full name</th>
-              <th class="text-left">Gender</th>
-              <th class="text-left">Avatar</th>
-              <th class="text-left">Action</th>
+              <th class="text-left">Tên</th>
+              <th class="text-left">Giới tính</th>
+              <th class="text-left">Ảnh đại diện</th>
+              <th class="text-left">#</th>
             </tr>
             </thead>
             <tbody>
@@ -27,9 +27,9 @@
                   </td>
                   <td class="text-left">
                     @if (u.status?.toLowerCase() === 'blocked') {
-                      <button class="btn btn-success" (click)="manage(u,'active')">Unlock</button>
+                      <button class="btn btn-success" (click)="manage(u,'active')">Mở khóa</button>
                     } @else if (u.status?.toLowerCase() === 'active') {
-                      <button class="btn btn-danger" (click)="manage(u,'blocked')">Lock</button>
+                      <button class="btn btn-danger" (click)="manage(u,'blocked')">Khóa</button>
                     }
                   </td>
                 </tr>

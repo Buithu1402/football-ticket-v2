@@ -16,8 +16,6 @@ import {forkJoin} from 'rxjs';
 @Component({
   selector: 'app-match-ticket',
   imports: [
-    BsDatepickerDirective,
-    BsDatepickerInputDirective,
     NgSelectComponent,
     ReactiveFormsModule,
     FormsModule,
@@ -29,7 +27,7 @@ import {forkJoin} from 'rxjs';
   styleUrl: './match-ticket.component.scss'
 })
 export class MatchTicketComponent implements OnInit {
-  title = signal('Add ticket for match');
+  title = signal('Thêm vé');
   tickets: TicketDTO[] = [];
   matchId = signal(0);
   currencyInputMask = createMask(MASK_CONFIG.currency);
@@ -92,18 +90,18 @@ export class MatchTicketComponent implements OnInit {
         .subscribe({
           next: res => {
             if (res.success) {
-              this.toast.success('Add ticket success');
+              this.toast.success('Thêm vé thành công');
               this.getData();
             } else {
               this.params.forEach(p => {
                 if (res.data.includes(p.typeId)) {
-                  this.toast.error(`Ticket ${p.typeName} is failed`);
+                  this.toast.error(`Vé ${p.typeName} thất bại`);
                 }
               });
             }
           },
           error: () => {
-            this.toast.error('Add ticket failed');
+            this.toast.error('Thêm vé thất bại');
           }
         });
     }

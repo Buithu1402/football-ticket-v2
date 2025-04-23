@@ -59,7 +59,7 @@ export class LeagueListComponent implements OnInit {
       initialState: {
         league: signal(JSON.parse(JSON.stringify(item))),
         isUpdate: signal(true),
-        title: signal('Update League')
+        title: signal('Cập nhật giải đấu')
       }
     }).content?.eventOut.subscribe((result: boolean) => {
       if (result) {
@@ -72,15 +72,15 @@ export class LeagueListComponent implements OnInit {
     this.bsModal.show(ConfirmModalComponent, {
       class: 'modal-dialog-centered',
       initialState: {
-        title: signal('Delete League'),
-        message: signal('Are you sure you want to delete this league?')
+        title: signal('Xóa giải đấu'),
+        message: signal('Bạn có chắc chắn muốn xóa giải đấu này không?'),
       }
     }).content?.eventOut.subscribe((result: boolean) => {
       if (result) {
         this.http.delete<ResponseData<string>>(`/api/league/${item.leagueId}`)
           .subscribe(res => {
             if (res.success) {
-              this.toast.success('Delete league successfully');
+              this.toast.success('Xóa giải đấu thành công');
               this.getData();
             } else {
               this.toast.error(res.message);

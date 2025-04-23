@@ -31,14 +31,14 @@ export class FixtureComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.storeService.setTitle('Match Fixture');
+    this.storeService.setTitle('Danh sách trận đấu');
     this.storeService.setBreadCrumb([
       {
-        label: 'Home',
+        label: 'Trang chủ',
         url: '/'
       },
       {
-        label: 'Match Fixture',
+        label: 'Danh sách trận đấu',
         url: '/fixture'
       }
     ]);

@@ -3,7 +3,7 @@
     <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
       <div class="mdc-card p-0">
         <div class="d-flex justify-content-between align-items-center py-0 pe-2">
-          <h6 class="card-title card-padding text-dark h-50">List Team</h6>
+          <h6 class="card-title card-padding text-dark h-50">Danh sách đội</h6>
           <input type="text" name="search" class="form-control h-50 w-75" placeholder="Search" [(ngModel)]="searchKey"
                  (keyup)="searchData()">
         </div>
@@ -11,16 +11,16 @@
           <table class="table">
             <thead>
             <tr>
-              <th class="text-left">No</th>
-              <th class="text-left">Name</th>
-              <th class="text-left">Address</th>
-              <th class="text-left">Established Year</th>
-              <th class="text-left">Stadium name</th>
-              <th class="text-left">Match played</th>
-              <th class="text-left">Win / Loss</th>
-              <th class="text-left">Goals</th>
+              <th class="text-left">Thứ tự</th>
+              <th class="text-left">Tên</th>
+              <th class="text-left">Địa chỉ</th>
+              <th class="text-left">Năm thành lập</th>
+              <th class="text-left">Sân vận động</th>
+              <th class="text-left">Trận đã chơi</th>
+              <th class="text-left">Thắng / Thua</th>
+              <th class="text-left">Bàn</th>
               <th class="text-left">Logo</th>
-              <th class="text-left">Action</th>
+              <th class="text-left">#</th>
             </tr>
             </thead>
             <tbody>
@@ -38,8 +38,8 @@
                     <img [src]="u.logo" alt="" style="width: 80px; height: 80px; object-fit: contain;">
                   </td>
                   <td class="text-left align-middle">
-                    <button class="btn btn-success me-2" (click)="update(u)">Update</button>
-                    <button class="btn btn-danger" (click)="delete(u)">Delete</button>
+                    <button class="btn btn-success me-2" (click)="update(u)">Cập nhật</button>
+                    <button class="btn btn-danger" (click)="delete(u)">Xóa</button>
                   </td>
                 </tr>
               }

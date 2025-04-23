@@ -1,26 +1,25 @@
 <div class="sportsmagazine-login-box">
   <a href="javascript:void(0)" (click)="bsRef.hide()" class="sportsmagazine-login-close sportsmagazine-color">
     <i class="icon-uniF106"></i></a>
-  <h4>Login To Your Account</h4>
+  <h4>Đăng nhập</h4>
   <form>
     <input type="text" name="username" placeholder="Enter username" [(ngModel)]="param.email">
     <input type="password" name="password" placeholder="Enter password" [(ngModel)]="param.password">
     <div class="clearfix"></div>
     <label (click)="login()">
-      <input type="button" value="Sign In"
+      <input type="button" value="Đăng nhập"
              class="sportsmagazine-bordercolor sportsmagazine-color">
     </label>
   </form>
-  <h4>Try Our Socials Also</h4>
-  <ul class="login-network">
+  <ul class="login-network d-none">
     <li><a href="javascript:void(0)"><i class="fa fa-facebook-square"></i> Facebook</a></li>
     <li class="sportsmagazine-twitter"><a href="javascript:void(0)"><i class="fa fa-twitter-square"></i> Twitter</a>
     </li>
     <li class="sportsmagazine-google-plus"><a href="javascript:void(0)"><i class="fa fa-google-plus-square"></i> Google+</a>
     </li>
   </ul>
-  <p>Not A Member Yet ?
+  <p>Chưa có tài khoản ?
     <a href="javascript:void(0)" (click)="redirectToLogin()"
-       class="sportsmagazine-color">Sign - Up Now !</a>
+       class="sportsmagazine-color">Đăng ký ngay !</a>
   </p>
 </div>

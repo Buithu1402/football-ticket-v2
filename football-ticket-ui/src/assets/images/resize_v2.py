@@ -2,11 +2,11 @@ import cv2
 import numpy as np
 
 # Load the image with alpha channel (transparency)
-image = cv2.imread('ticket.jpg', cv2.IMREAD_UNCHANGED)
+image = cv2.imread('ticket_1920x400.jpg', cv2.IMREAD_UNCHANGED)
 
 # Define the target width and height (container size)
-target_width = 1920
-target_height = 400
+target_width = 1170
+target_height = 471
 
 def resize_contain(image, target_width, target_height):
     # Check if the image has an alpha channel (transparency)
