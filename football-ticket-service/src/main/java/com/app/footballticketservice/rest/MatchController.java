@@ -40,7 +40,7 @@ public class MatchController {
     @PostMapping("score")
     public Object score(@RequestBody ScoreMatchDTO payload) {
         matchService.saveScore(payload);
-        return ResponseContainer.success("Score updated successfully");
+        return ResponseContainer.success("Cập nhật tỷ số thành công");
     }
 
     @GetMapping("{matchId}/tickets")
@@ -52,14 +52,14 @@ public class MatchController {
     public Object tickets(@RequestBody List<MatchTicketPayload> payloads) {
         var result = matchService.upsertTicket(payloads);
         return CollectionUtils.isEmpty(result)
-                ? ResponseContainer.success("Tickets created successfully")
+                ? ResponseContainer.success("Tạo vé thành công")
                 : ResponseContainer.error(result);
     }
 
     @PostMapping("upsert")
     public Object upsert(@RequestBody UpsertMatchPayload payload) {
         matchService.save(payload);
-        return ResponseContainer.success("Match created successfully");
+        return ResponseContainer.success("Tạo trận đấu thành công");
     }
 
     @PostMapping("test")

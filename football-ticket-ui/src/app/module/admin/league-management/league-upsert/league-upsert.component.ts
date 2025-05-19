@@ -6,6 +6,7 @@ import {ResponseData} from '../../../../share/model/response-data.model';
 import {HttpClient} from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
 import {BsModalRef} from 'ngx-bootstrap/modal';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-league-upsert',
@@ -27,7 +28,8 @@ export class LeagueUpsertComponent implements OnInit {
     protected fileService: TransferFileService,
     protected http: HttpClient,
     protected toast: ToastrService,
-    protected bsRef: BsModalRef
+    protected bsRef: BsModalRef,
+    protected router: Router
   ) {
   }
 
@@ -39,7 +41,7 @@ export class LeagueUpsertComponent implements OnInit {
   }
 
   addLeague() {
-    if (this.league().name === '') {
+    if (!this.league.name) {
       this.toast.error('Tên giải đấu không được để trống');
       return;
     }
@@ -54,7 +56,7 @@ export class LeagueUpsertComponent implements OnInit {
     this.http.post<ResponseData<string>>('api/league', formData)
       .subscribe(res => {
         if (res.success) {
-          this.toast.success(this.isUpdate() ? 'Thành công' : 'Tạo mới thành công');
+          this.toast.success(this.isUpdate() ? 'Cập nhật giải đấu thành công' : 'Tạo mới giải đấu thành công');
           if(this.isUpdate()) {
             this.bsRef.hide();
             this.eventOut.emit(true);
@@ -62,8 +64,9 @@ export class LeagueUpsertComponent implements OnInit {
             this.league = signal(new League());
             this.clearUpload();
           }
+          this.router.navigate(['/admin/league-management']).then();
         } else {
-          this.toast.error(res.message);
+          this.toast.error('Không thể lưu thông tin giải đấu');
         }
       });
   }

@@ -38,7 +38,7 @@ public class StadiumController {
     @DeleteMapping("seat/{seatId}")
     public Object deleteSeat(@PathVariable("seatId") long seatId) {
         stadiumService.deleteSeat(seatId);
-        return ResponseContainer.success("Delete seat success");
+        return ResponseContainer.success("Xóa ghế thành công");
     }
 
 
@@ -52,12 +52,12 @@ public class StadiumController {
             url = Base64Utils.encodeImage(file);
         }
         stadiumService.save(payload, url);
-        return ResponseContainer.success("Insert stadium success");
+        return ResponseContainer.success("Thêm sân vận động thành công");
     }
 
     @DeleteMapping("{stadiumId}")
     public Object delete(@PathVariable("stadiumId") long stadiumId) {
         stadiumService.delete(stadiumId);
-        return ResponseContainer.success("Delete stadium success");
+        return ResponseContainer.success("Xóa sân vận động thành công");
     }
 }

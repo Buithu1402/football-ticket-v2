@@ -7,14 +7,14 @@
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
-                <input type="text" class="form-control" id="teamName" placeholder="Enter here"
+                <input type="text" class="form-control" id="teamName" placeholder="Nhập thông tin"
                        [(ngModel)]="team().name">
                 <label for="teamName">Tên</label>
               </div>
             </div>
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
-                <input type="text" class="form-control" id="address" placeholder="Enter here"
+                <input type="text" class="form-control" id="address" placeholder="Nhập thông tin"
                        [(ngModel)]="team().address">
                 <label for="address">Địa chỉ</label>
               </div>
@@ -22,7 +22,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
-                <input type="text" class="form-control" id="establishedYear" placeholder="Enter here"
+                <input type="text" class="form-control" id="establishedYear" placeholder="Nhập thông tin"
                        [(ngModel)]="team().establishedYear">
                 <label for="establishedYear">Năm thành lập</label>
               </div>
@@ -30,7 +30,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
-                <input type="text" class="form-control" id="stadiumName" placeholder="Enter here"
+                <input type="text" class="form-control" id="stadiumName" placeholder="Nhập thông tin"
                        [(ngModel)]="team().stadiumName">
                 <label for="stadiumName">Sân vận động</label>
               </div>
@@ -38,7 +38,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
-                <input type="number" class="form-control" id="goal" placeholder="Enter here"
+                <input type="number" class="form-control" id="goal" placeholder="Nhập thông tin"
                        [(ngModel)]="team().goals">
                 <label for="goal">Bàn</label>
               </div>
@@ -46,7 +46,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
-                <input type="number" class="form-control" id="matchPlayed" placeholder="Enter here"
+                <input type="number" class="form-control" id="matchPlayed" placeholder="Nhập thông tin"
                        [(ngModel)]="team().matchPlayed">
                 <label for="matchPlayed">Trận đã chơi</label>
               </div>
@@ -54,7 +54,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
-                <input type="number" class="form-control" id="win" placeholder="Enter here"
+                <input type="number" class="form-control" id="win" placeholder="Nhập thông tin"
                        [(ngModel)]="team().win">
                 <label for="win">Thắng</label>
               </div>
@@ -62,7 +62,7 @@
 
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
               <div class="form-floating mb-3 w-100">
-                <input type="number" class="form-control" id="loss" placeholder="Enter here"
+                <input type="number" class="form-control" id="loss" placeholder="Nhập thông tin"
                        [(ngModel)]="team().losses">
                 <label for="loss">Thua</label>
               </div>
@@ -87,9 +87,9 @@
                           (dragover)="fileService.allowDrop($event)">
                         Kéo thả tệp vào đây
                       </h5>
-                      <p>Or</p>
+                      <p>Hoặc</p>
                       <div class="upload-btn-wrapper">
-                        <button class="btn btn-gradient-primary-2">Upload</button>
+                        <button class="btn btn-gradient-primary-2">Tải lên</button>
                         <input type="file" name="file" (change)="fileService.handleFileInput($event)"
                                (drop)="fileService.handleDrop($event)"
                                (dragover)="fileService.allowDrop($event)"/>
@@ -131,7 +131,7 @@
 
             @if (team().logo) {
               <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop d-flex flex-column">
-                <p>Original Image</p>
+                <p>Ảnh gốc</p>
                 <div class="upload-preview">
                   <div class="card mt-1 mb-0 shadow-none border">
                     <div class="p-2">
@@ -147,7 +147,7 @@
               </div>
             }
           </div>
-          <button class="btn btn-primary" (click)="add()">Nộp</button>
+          <button class="btn btn-primary" (click)="add()">Lưu</button>
         </div>
       </div>
     </div>

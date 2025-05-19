@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 public enum ErrorCodeEnum {
 
-    SUCCESS(200, "Successful"),
+    SUCCESS(200, "  Thành công"),
 
     BAD_REQUEST(400, "Bad request"),
     UN_AUTHORIZATION(401, "Authorization required"),

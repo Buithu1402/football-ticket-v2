@@ -5,6 +5,7 @@ export class InputParam {
     public message: string = '',
     public title: string = '',
     public type: string = 'text',
+    public placeholder: string = '',
   ) {
   }
 }

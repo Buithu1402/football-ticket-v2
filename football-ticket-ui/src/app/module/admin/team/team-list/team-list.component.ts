@@ -44,7 +44,7 @@ export class TeamListComponent implements OnInit {
         if (res.success) {
           this.data = res.data;
         } else {
-          this.toast.error(res.message);
+          this.toast.error('Không thể tải danh sách đội bóng');
         }
       });
   }
@@ -79,10 +79,10 @@ export class TeamListComponent implements OnInit {
         this.http.delete<ResponseData<any>>(`api/team?teamId=${item.teamId}`)
           .subscribe(res => {
             if (res.success) {
-              this.toast.success(res.message);
+              this.toast.success('Xóa đội bóng thành công');
               this.getData();
             } else {
-              this.toast.error(res.message);
+              this.toast.error('Không thể xóa đội bóng');
             }
           });
       }

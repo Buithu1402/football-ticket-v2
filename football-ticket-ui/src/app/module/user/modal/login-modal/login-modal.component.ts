@@ -45,7 +45,7 @@ export class LoginModalComponent {
             this.toast.success('Đăng nhập thành công');
             this.bsRef.hide();
           } else {
-            this.toast.error(res.message, 'Error');
+            this.toast.error(res.message, 'Lỗi');
           }
         });
     }

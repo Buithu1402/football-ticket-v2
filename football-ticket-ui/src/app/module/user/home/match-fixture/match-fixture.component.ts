@@ -32,13 +32,13 @@ export class MatchFixtureComponent implements OnInit {
       if (res1.success) {
         this.matches = res1.data;
       } else {
-        this.toast.error(res1.message);
+        this.toast.error('Không thể tải danh sách trận đấu');
       }
 
       if (res2.success) {
         this.teams = res2.data;
       } else {
-        this.toast.error(res2.message);
+        this.toast.error('Không thể tải danh sách đội bóng');
       }
     });
   }

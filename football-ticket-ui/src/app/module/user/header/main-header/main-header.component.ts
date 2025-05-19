@@ -18,10 +18,10 @@ import {League} from '../../../../share/model/League';
 })
 export class MainHeaderComponent {
   menus: Menu[] = [
-    new Menu('Home', '/home', '', [], '', false, true),
-    new Menu('Football Ticket', '/leagues', 'Popular competitions', [], 'assets/images/ticket_488x275.png'),
-    new Menu('Team', '/team/list'),
-    new Menu('Buy Now', '/login-register', '', [], '', true)
+    new Menu('TRANG CHỦ', '/home', '', [], '', false, true),
+    new Menu('GIẢI ĐẤU', '/leagues', 'Các giải đấu phổ biến', [], 'assets/images/ticket_488x275.png'),
+    new Menu('ĐỘI BÓNG', '/team/list'),
+    new Menu('MUA VÉ', '/login-register', '', [], '', true)
   ];
 
   // get, post, put, patch, delete
@@ -37,7 +37,7 @@ export class MainHeaderComponent {
         if (res.success) {
           const m = res.data.map(league => new Menu(league.name, `/fixture?lid=${league.leagueId}`));
           this.menus[1].children = [
-            new Menu('ALL', '/leagues'),
+            new Menu('TẤT CẢ CÁC GIẢI ĐẤU', '/leagues'),
             ...m
           ];
         }

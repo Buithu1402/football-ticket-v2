@@ -52,11 +52,11 @@ public class AuthenticateController {
     public Object register(@Valid @RequestBody RegisterPayload payload) {
         try {
             if (authService.validateEmailExist(payload.email())) {
-                return ResponseContainer.failure("Email already exists");
+                return ResponseContainer.failure("Email đã tồn tại");
             }
             authService.register(payload);
 //            emailService.sendEmailOtp(payload.email());
-            return ResponseContainer.success("Register successfully");
+            return ResponseContainer.success("Đăng ký thành công");
         } catch (Exception e) {
             return ResponseContainer.failure(e.getMessage());
         }
@@ -66,7 +66,7 @@ public class AuthenticateController {
     public Object resendOtp(@RequestBody String email) {
         try {
             emailService.sendEmailOtp(email);
-            return ResponseContainer.success("Send OTP successfully");
+            return ResponseContainer.success("Gửi mã OTP thành công");
         } catch (Exception e) {
             return ResponseContainer.failure(e.getMessage());
         }
@@ -77,7 +77,7 @@ public class AuthenticateController {
         try {
             var key = "%s|%s".formatted(email, System.currentTimeMillis());
             var encryptedKey = AESUtils.encrypt(key);
-            return ResponseContainer.success("Send OTP successfully");
+            return ResponseContainer.success("Gửi mã OTP thành công");
         } catch (Exception e) {
             return ResponseContainer.failure(e.getMessage());
         }
@@ -87,13 +87,13 @@ public class AuthenticateController {
     public Object verifyOtp(@RequestBody OtpVerifyPayload payload) {
         var otp = otpService.getOtp(payload.email());
         if (otp.isEmpty() || otp.get().isNotCorrect(payload.otp())) {
-            return ResponseContainer.failure("Invalid OTP");
+            return ResponseContainer.failure("Mã OTP không hợp lệ");
         }
         if (otp.get().isExpired()) {
-            return ResponseContainer.failure("OTP is expired");
+            return ResponseContainer.failure("Mã OTP đã hết hạn");
         }
         otpService.deleteOtp(payload.email());
         authService.activeUser(payload.email());
-        return ResponseContainer.success("OTP is correct");
+        return ResponseContainer.success("Xác thực OTP thành công");
     }
 }

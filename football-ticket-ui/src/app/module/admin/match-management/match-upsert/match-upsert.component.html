@@ -14,7 +14,7 @@
                            bindLabel="name"
                            bindValue="teamId"
                            groupBy="selectedAllGroup"
-                           placeholder="Select team"
+                           placeholder="Chọn đội bóng"
                            [(ngModel)]="match().homeTeamId">
                 </ng-select>
               </div>
@@ -29,7 +29,7 @@
                            bindValue="teamId"
                            groupBy="selectedAllGroup"
                            [selectableGroup]="true"
-                           placeholder="Select team"
+                           placeholder="Chọn đội bóng"
                            [(ngModel)]="match().awayTeamId">
 
                 </ng-select>
@@ -45,7 +45,7 @@
                            bindLabel="stadiumName"
                            bindValue="stadiumId"
                            groupBy="selectedAllGroup"
-                           placeholder="Select Stadium"
+                           placeholder="Chọn sân vận động"
                            [(ngModel)]="match().stadiumId">
                 </ng-select>
               </div>
@@ -55,7 +55,7 @@
               <div class="form mb-3 w-100">
                 <label>Ngày trận đấu</label>
                 <input type="text"
-                       placeholder="Start date"
+                       placeholder="Ngày bắt đầu"
                        placement="left"
                        name="matchDate"
                        [(ngModel)]="matchDate"
@@ -76,7 +76,7 @@
                            bindValue="leagueId"
                            groupBy="selectedAllGroup"
                            [selectableGroup]="true"
-                           placeholder="Select team"
+                           placeholder="Chọn giải đấu"
                            [(ngModel)]="match().leagueId">
 
                 </ng-select>
@@ -85,7 +85,7 @@
           </div>
 
 
-          <button class="btn btn-primary" (click)="add()">Nộp</button>
+          <button class="btn btn-primary" (click)="add()">Lưu</button>
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ public class Constants {
     public static final String URL_FRONTEND = "url-frontend";
     public static final String REDIRECT_URI_PARAM_COOKIE_NAME = "redirect_uri";
     public static final String AUTHORIZED_REDIRECT_URI = "authorizedRedirectUris";
-    public static final String SUCCESS = "success";
+    public static final String SUCCESS = "Thành công";
     public static final String ERROR = "error";
 
     // Email template

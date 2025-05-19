@@ -56,7 +56,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <div class="sportsmagazine-section-heading"><h2>Chi tiết trận đấu</h2></div>
+        <div class="sportsmagazine-section-heading"><h2>CHI TIẾT VÉ</h2></div>
         <ul class="sportsmagazine-match-info">
           <li>
             <i class="fa fa-calendar-o"></i>
@@ -92,7 +92,7 @@
                        style="max-width: 200px;"
                        bindLabel="seatNumber"
                        bindValue="seatId"
-                       placeholder="Select seat"
+                       placeholder="Chọn ghế"
                        [(ngModel)]="paramBooking.seatIds"
                        name="selectSeat"
                        [multiple]="true"></ng-select>
@@ -112,23 +112,16 @@
             </p>
           }
           <div>
-            <h5>Stadium</h5>
+            <h5>Sân vận động</h5>
             <img [src]="matchDetail.stadiumImage" alt="">
           </div>
           <div class="sportsmagazine-post-tags">
             <div class="sportsmagazine-tags">
-              <a href="javascript:void(0)">#Playoffs</a>
-              <a href="javascript:void(0)">#Injuries</a>
-              <a href="javascript:void(0)">#Teams</a>
-              <a href="javascript:void(0)">#Uniform</a>
+
             </div>
             <div class="sportsmagazine-blog-social">
               <ul>
-                <li><a href="javascript:void(0)" class="color-one"><i class="fa fa-facebook"></i>facebook</a>
-                </li>
-                <li><a href="javascript:void(0)" class="color-two"><i class="fa fa-twitter"></i>Twitter</a></li>
-                <li><a href="javascript:void(0)" class="color-three"><i class="fa fa-google-plus"></i>Google+</a>
-                </li>
+
               </ul>
             </div>
           </div>
@@ -138,7 +131,7 @@
       <!--// SideBar \\-->
       <aside class="col-md-3">
         <!--// Widget Upcoming Matches \\-->
-        <div class="sportsmagazine-widget-heading"><h2>Popular Matches</h2></div>
+        <div class="sportsmagazine-widget-heading"><h2>TRẬN ĐẤU PHỔ BIẾN</h2></div>
         <div class="widget widget_matches">
           <ul>
             @for (m of matches; track m) {
@@ -156,7 +149,7 @@
         </div>
 
         <!--// Widget Cetagories \\-->
-        <div class="sportsmagazine-widget-heading"><h2>Popular Team</h2></div>
+        <div class="sportsmagazine-widget-heading"><h2>ĐỘI BÓNG PHỔ BIẾN</h2></div>
         <div class="widget widget_cetagories">
           <ul>
             @for (t of teams; track t) {

@@ -111,9 +111,9 @@ INSERT INTO system_settings(name, value) VALUES ('BILL_EMAIL', '<!DOCTYPE html>
                 <tr>
                     <td class="match-info">
                         <p><strong>$model.homeTeam$ vs $model.awayTeam$</strong></p>
-                        <p><strong>Date:</strong> $model.matchDate$</p>
-                        <p><strong>Time:</strong> $model.matchTime$</p>
-                        <p><strong>Venue:</strong> $model.stadium$</p>
+                        <p><strong>Ngày:</strong> $model.matchDate$</p>
+                        <p><strong>Giờ:</strong> $model.matchTime$</p>
+                        <p><strong>Địa điểm:</strong> $model.stadium$</p>
                     </td>
                 </tr>
                 <tr>

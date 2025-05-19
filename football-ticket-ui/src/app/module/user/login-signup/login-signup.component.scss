@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:host {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+  display: flex;
+  align-items: center;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  &.login-card {
+    border-top: 5px solid #3a518d;
+  }
+  
+  &.register-card {
+    border-top: 5px solid #FF9800;
+  }
+}
+
+.auth-header {
+  padding: 30px 30px 20px;
+  position: relative;
+  
+  h3 {
+    font-size: 2.2rem;
+    position: relative;
+    z-index: 1;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .auth-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(58, 81, 141, 0.1) 0%, rgba(255, 152, 0, 0.05) 70%);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+  }
+}
+
+.auth-body {
+  padding: 0 30px 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  
+  label {
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}
+
+.input-container {
+  position: relative;
+  
+  .form-control {
+    padding: 14px 18px 14px 50px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    transition: all 0.3s;
+    background-color: #f9f9f9;
+    height: auto;
+    
+    &:focus {
+      border-color: #3a518d;
+      box-shadow: 0 0 0 3px rgba(58, 81, 141, 0.15);
+      background-color: #fff;
+    }
+    
+    &.is-invalid {
+      border-color: #dc3545;
+      background-image: none;
+    }
+    
+    &::placeholder {
+      color: #aaa;
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.2rem;
+    
+    &::before {
+      font-family: "FontAwesome";
+      content: "\f007"; // Default icon
+    }
+    
+    &.fa-envelope::before {
+      content: "\f0e0";
+    }
+    
+    &.fa-lock::before {
+      content: "\f023";
+    }
+    
+    &.fa-user::before {
+      content: "\f007";
+    }
+  }
+}
+
+.invalid-feedback {
+  font-size: 0.95rem;
+  margin-top: 7px;
+  color: #dc3545;
+}
+
+.forgot-link {
+  font-size: 1rem;
+  color: #777;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: #3a518d;
+  }
+}
+
+.btn-auth {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #3a518d, #4a62a3);
+  color: white;
+  box-shadow: 0 4px 15px rgba(58, 81, 141, 0.35);
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  
+  &:hover {
+    background: linear-gradient(45deg, #314579, #3a518d);
+    box-shadow: 0 6px 18px rgba(58, 81, 141, 0.45);
+  }
+  
+  &:active {
+    transform: translateY(2px);
+  }
+  
+  span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-out;
+    z-index: 0;
+  }
+  
+  &:hover::after {
+    transform: translate(-50%, -50%) scale(20);
+  }
+}
+
+.auth-footer {
+  p {
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  a {
+    color: #3a518d;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.1rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FF9800;
+      transition: width 0.3s;
+    }
+    
+    &:hover::after {
+      width: 100%;
+    }
+    
+    &.register-link {
+      color: #FF9800;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 991px) {
+  .auth-container {
+    padding: 40px 0;
+  }
+  
+  .auth-card {
+    margin-bottom: 30px;
+  }
+}
+
+// Animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-card {
+  animation: fadeIn 0.6s ease-out forwards;
+  
+  &.login-card {
+    animation-delay: 0.1s;
+  }
+  
+  &.register-card {
+    animation-delay: 0.3s;
+  }
+} 

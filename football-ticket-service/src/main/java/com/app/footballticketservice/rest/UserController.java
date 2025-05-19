@@ -33,6 +33,6 @@ public class UserController {
             @RequestParam("action") String action
     ) {
         userService.manage(uid, action);
-        return ResponseContainer.success("OK");
+        return ResponseContainer.success("Thành công");
     }
 }

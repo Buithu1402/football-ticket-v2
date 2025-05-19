@@ -20,18 +20,17 @@ import {AuthenticationService} from '../../../share/service/authentication.servi
 })
 export class LoginSignupComponent implements OnInit {
   inputRegisterParams: InputParam[] = [
-    new InputParam('email', '', '', 'Your Email'),
-    new InputParam('password', '', '', 'Password', 'password'),
-    new InputParam('confirmPassword', '', '', 'Confirm Password', 'password'),
-    new InputParam('firstName', '', '', 'First Name'),
-    new InputParam('lastName', '', '', 'Last Name'),
+    new InputParam('email', '', '', 'Nhập Email', 'email', 'Nhập địa chỉ email của bạn'),
+    new InputParam('password', '', '', 'Nhập Password', 'password', 'Mật khẩu của bạn'),
+    new InputParam('confirmPassword', '', '', 'Nhập lại Password', 'password', 'Xác nhận mật khẩu'),
+    new InputParam('firstName', '', '', 'Họ', 'text', 'Nhập họ của bạn'),
+    new InputParam('lastName', '', '', 'Tên', 'text', 'Nhập tên của bạn'),
   ];
 
   inputLoginParams: InputParam[] = [
-    new InputParam('email', '', '', 'Your Email'),
-    new InputParam('password', '', '', 'Password', 'password'),
+    new InputParam('email', '', '', 'Email', 'email', 'Nhập email đăng nhập của bạn'),
+    new InputParam('password', '', '', 'Mật khẩu', 'password', 'Nhập mật khẩu của bạn'),
   ];
-
   constructor(
     protected storeService: StoreService
     , protected toast: ToastrService
@@ -42,7 +41,7 @@ export class LoginSignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.storeService.setTitle('Login/Signup');
+    this.storeService.setTitle('ĐĂNG NHẬP - ĐĂNG KÝ');
     if (this.authService.isLoggedIn) {
       this.authService.redirectHome();
     }
@@ -80,7 +79,7 @@ export class LoginSignupComponent implements OnInit {
       this.http.post<ResponseData<string>>('api/auth/register', param)
         .subscribe(res => {
           if (res.success) {
-            this.showToast('Thành công', 'success');
+            this.showToast('Đăng ký thành công', 'success');
             this.inputRegisterParams.forEach(param => param.value = '');
           } else {
             this.showToast(res.message, 'error');
@@ -104,7 +103,7 @@ export class LoginSignupComponent implements OnInit {
       this.authService.login(param)
         .subscribe(res => {
           if (res.success) {
-            this.showToast('Thành công', 'success');
+            this.showToast('Đăng nhập thành công', 'success');
             this.authService.redirectHome();
           } else {
             this.showToast(res.message, 'error');

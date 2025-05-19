@@ -30,14 +30,14 @@ export class TeamListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.storeService.setTitle('Team list');
+    this.storeService.setTitle('DANH SÁCH ĐỘI BÓNG');
     this.storeService.setBreadCrumb([
       {
-        label: 'Home',
+        label: 'Trang chủ',
         url: '/'
       },
       {
-        label: 'Team list',
+        label: 'Danh sách đội bóng',
         url: '/team/list'
       }
     ]);
@@ -49,7 +49,7 @@ export class TeamListComponent implements OnInit {
       if (data.success) {
         this.teams = data.data;
       } else {
-        this.toastr.error(data.message);
+        this.toastr.error('Không thể tải danh sách đội bóng');
       }
     });
 

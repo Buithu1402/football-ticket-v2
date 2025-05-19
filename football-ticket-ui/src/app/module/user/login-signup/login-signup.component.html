@@ -1,71 +1,83 @@
-<div class="sportsmagazine-main-section sportsmagazine-login-form-full">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-6">
-        <div class="sportsmagazine-login-form">
-          <h4>Đăng nhập</h4>
-          <form>
-            <ul>
+<div class="auth-container">
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-5 mx-auto">
+        <div class="auth-card login-card">
+          <div class="auth-header">
+            <h3 class="fw-bold mb-0">Đăng nhập</h3>
+            <div class="auth-decoration"></div>
+          </div>
+          <div class="auth-body">
+            <form>
               @for (input of inputLoginParams; track input) {
-                <li class="text-start">
-                  <input [type]="input.type" [name]="input.name" [(ngModel)]="input.value"
-                         [ngClass]="{'input-invalid': !!input.message}"
-                         placeholder="Enter here" class="form-control text-dark fw-bold">
+                <div class="form-group mb-4">
+                  <label class="form-label fw-medium">{{ input.title }}</label>
+                  <div class="input-container">
+                    <input [type]="input.type" [name]="input.name" [(ngModel)]="input.value"
+                           [ngClass]="{'is-invalid': !!input.message}"
+                           class="form-control" placeholder="{{ input.placeholder }}">
+                    <i class="input-icon" [ngClass]="{'fa-envelope': input.name === 'email', 'fa-lock': input.name === 'password'}"></i>
+                  </div>
                   @if (input.message) {
-                    <span><strong class="text-danger">{{ input.message }}</strong></span>
+                    <div class="invalid-feedback d-block">{{ input.message }}</div>
                   }
                   @if (input.name === 'password') {
-                    <a href="javascript:void(0)">Quên mật khẩu?</a>
+                    <div class="d-flex justify-content-end mt-1">
+                      <a href="javascript:void(0)" class="text-decoration-none forgot-link">Quên mật khẩu?</a>
+                    </div>
                   }
-                </li>
+                </div>
               }
-              <li>
-                <label class="submit-border">
-                  <input type="button" value="Đăng nhập" (click)="login()"><span></span>
-                </label>
-              </li>
-            </ul>
-          </form>
-          <ul class="sportsmagazine-login-social d-none">
-            <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
-                   class="color-one"><i class="fa fa-facebook"></i>facebook</a></li>
-            <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
-                   class="color-two"><i class="fa fa-twitter"></i>Twitter</a></li>
-            <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
-                   class="color-three"><i class="fa fa-google-plus"></i>Google+</a></li>
-            <li><a href="javascript:void(0)" (click)="showToast('This feature is coming soon', 'warning')"
-                   class="color-four"><i class="fa fa-instagram"></i>Instagram</a>
-            </li>
-          </ul>
-          <span>Chưa có tài khoản ?<a href="javascript:void(0)"> Đăng ký ngay !</a></span>
+              <div class="d-grid mt-4">
+                <button type="button" class="btn btn-auth" (click)="login()">
+                  <span>Đăng nhập</span>
+                </button>
+              </div>
+            </form>
+            <div class="auth-footer mt-4 text-center">
+              <p>Chưa có tài khoản? <a href="#register" class="register-link">Đăng ký ngay</a></p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="sportsmagazine-login-form sportsmagazine-register-form">
-          <h4>Đăng ký</h4>
-          <form>
-            <ul>
+
+      <div class="col-lg-6 mx-auto" id="register">
+        <div class="auth-card register-card">
+          <div class="auth-header">
+            <h3 class="fw-bold mb-0">Đăng ký tài khoản</h3>
+            <div class="auth-decoration"></div>
+          </div>
+          <div class="auth-body">
+            <form>
               @for (input of inputRegisterParams; track input) {
-                <li>
-                  <label class="form-label">{{ input.title }}</label>
-                  <input [type]="input.type" [name]="input.name" placeholder="Enter here"
-                         class="form-control text-dark fw-bold"
-                         [ngClass]="{'input-invalid': !!input.message}"
-                         [(ngModel)]="input.value"
-                  >
+                <div class="form-group mb-4">
+                  <label class="form-label fw-medium">{{ input.title }}</label>
+                  <div class="input-container">
+                    <input [type]="input.type" [name]="input.name" [(ngModel)]="input.value"
+                           [ngClass]="{'is-invalid': !!input.message}"
+                           class="form-control" placeholder="{{ input.placeholder }}">
+                    <i class="input-icon" 
+                       [ngClass]="{
+                         'fa-envelope': input.name === 'email', 
+                         'fa-lock': input.name === 'password' || input.name === 'confirmPassword',
+                         'fa-user': input.name === 'firstName' || input.name === 'lastName'
+                       }"></i>
+                  </div>
                   @if (input.message) {
-                    <span><strong class="text-danger">{{ input.message }}</strong></span>
+                    <div class="invalid-feedback d-block">{{ input.message }}</div>
                   }
-                </li>
+                </div>
               }
-              <li>
-                <label class="submit-border">
-                  <input type="button" value="Đăng ký" (click)="signUp()"><span></span>
-                </label>
-              </li>
-            </ul>
-          </form>
+              <div class="d-grid mt-4">
+                <button type="button" class="btn btn-auth" (click)="signUp()">
+                  <span>Đăng ký</span> 
+                </button>
+              </div>
+            </form>
+            <div class="auth-footer mt-4 text-center">
+              <p>Đã có tài khoản? <a href="#" class="login-link">Đăng nhập ngay</a></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

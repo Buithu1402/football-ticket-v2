@@ -40,13 +40,13 @@ public class TeamController {
             data.setLogo(url);
         }
         teamService.save(data);
-        return ResponseContainer.success("Success");
+        return ResponseContainer.success("Thành công");
     }
 
     @DeleteMapping
     public Object delete(@RequestParam("teamId") Long teamId) {
         teamService.delete(teamId);
-        return ResponseContainer.success("Success");
+        return ResponseContainer.success("Thành công");
     }
 
 }

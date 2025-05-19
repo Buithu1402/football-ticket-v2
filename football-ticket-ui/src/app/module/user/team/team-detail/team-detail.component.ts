@@ -25,10 +25,10 @@ export class TeamDetailComponent implements OnInit {
               protected route: ActivatedRoute,
               protected toast: ToastrService,
               protected http: HttpClient) {
-    this.storeService.setTitle('Team detail');
+    this.storeService.setTitle('CHI TIẾT ĐỘI BÓNG');
     this.storeService.setBreadCrumb([
-      new BreadCrumb('Home', '/home'),
-      new BreadCrumb('Team detail', '/team/detail')
+      new BreadCrumb('Trang chủ', '/home'),
+      new BreadCrumb('Chi tiết đội bóng', '/team/detail')
     ]);
   }
 
@@ -40,7 +40,7 @@ export class TeamDetailComponent implements OnInit {
           if (res.success) {
             this.teamDetail = res.data;
           } else {
-            this.toast.error(res.message);
+            this.toast.error('Không thể tải thông tin đội bóng');
           }
         });
     });

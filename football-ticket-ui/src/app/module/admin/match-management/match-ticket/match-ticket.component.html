@@ -17,7 +17,7 @@
                          (ngModelChange)="validatePrice(type)"
                          min="0"
                          name="inputPrice" placeholder="123456VND">
-                  <label for="inputPrice">Price</label>
+                  <label for="inputPrice">Giá vé</label>
                   <div class="invalid-feedback">
                     Vui lòng nhập giá vé
                   </div>
@@ -27,7 +27,7 @@
                   <ng-select [items]="type.availableSeats"
                              bindLabel="seatNumber"
                              bindValue="seatId"
-                             placeholder="Select seat"
+                             placeholder="Chọn ghế"
                              [(ngModel)]="type.seatIds"
                              (ngModelChange)="calculateSeatAvailabe()"
                              name="selectSeat"
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop form-floating">
-                  <textarea class="form-control" placeholder="Description about type" id="areaDescription"
+                  <textarea class="form-control" placeholder="Mô tả về loại vé" id="areaDescription"
                             [(ngModel)]="type.description"
                             name="areaDescription"
                             rows="3"></textarea>
@@ -44,7 +44,7 @@
               </div>
             </div>
           }
-          <button class="btn btn-primary mb-3" (click)="add()">Nộp</button>
+          <button class="btn btn-primary mb-3" (click)="add()">Lưu</button>
         </div>
       </div>
     </div>

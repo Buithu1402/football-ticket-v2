@@ -40,13 +40,11 @@ public class LeagueController {
         if (logo != null && logo.getContentType().startsWith("image")) {
             url = Base64Utils.encodeImage(logo);
         }
-        leagueService.save(new League(leagueId, name, url));
-        return ResponseContainer.success("Insert league success");
+                leagueService.save(new League(leagueId, name, url));        return ResponseContainer.success("Thêm giải đấu thành công");
     }
 
     @DeleteMapping("{leagueId}")
     public Object delete(@PathVariable(value = "leagueId") Long leagueId) {
-        leagueService.delete(leagueId);
-        return ResponseContainer.success("Delete league success");
+                leagueService.delete(leagueId);        return ResponseContainer.success("Xóa giải đấu thành công");
     }
 }

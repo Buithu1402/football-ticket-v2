@@ -35,11 +35,11 @@ export class LeaguesComponent implements OnInit {
     this.storeService.setTitle('Danh sách giải đấu');
     this.storeService.setBreadCrumb([
       {
-        label: 'Home',
+        label: 'Trang chủ',
         url: '/'
       },
       {
-        label: 'League',
+        label: 'Giải đấu',
         url: '/leagues'
       }
     ]);
