@@ -6,20 +6,20 @@ import lombok.Getter;
 @Getter
 public enum ErrorCodeEnum {
 
-    SUCCESS(200, "  Thành công"),
+    SUCCESS(200, "Thành công"),
 
-    BAD_REQUEST(400, "Bad request"),
-    UN_AUTHORIZATION(401, "Authorization required"),
-    DENIED_IP(403, "IP not allow to be connected"),
-    PERMISSION_DENIED(403, "You do not have permission to access this api"),
-    INVALID_INPUT(403, "Invalid input"),
-    TOO_MANY_REQUEST(403, "Too many requests"),
-    ACCOUNT_LOCKED(403, "Account locked"),
-    ACCOUNT_INACTIVE(403, "Account need to be activated"),
-    REGISTER_FAILED(403, "Register failed"),
-    ACCOUNT_NOT_FOUND(403, "Account not found"),
-    PASSWORD_INCORRECT(403, "Password incorrect"),
-    SERVER_ERROR(500, "There was an error in the services. Please contact the Help Desk"),
+    BAD_REQUEST(400, "Yêu cầu không hợp lệ"),
+    UN_AUTHORIZATION(401, "Yêu cầu xác thực"),
+    DENIED_IP(403, "IP không được phép kết nối"),
+    PERMISSION_DENIED(403, "Bạn không có quyền truy cập API này"),
+    INVALID_INPUT(403, "Dữ liệu đầu vào không hợp lệ"),
+    TOO_MANY_REQUEST(403, "Quá nhiều yêu cầu"),
+    ACCOUNT_LOCKED(403, "Tài khoản đã bị khóa"),
+    ACCOUNT_INACTIVE(403, "Tài khoản cần được kích hoạt"),
+    REGISTER_FAILED(403, "Đăng ký thất bại"),
+    ACCOUNT_NOT_FOUND(403, "Không tìm thấy tài khoản"),
+    PASSWORD_INCORRECT(403, "Mật khẩu không chính xác"),
+    SERVER_ERROR(500, "Có lỗi xảy ra với dịch vụ. Vui lòng liên hệ bộ phận Hỗ trợ"),
     ;
 
     private final int code;
