@@ -4,7 +4,7 @@
       <div class="mdc-card p-0">
         <div class="d-flex justify-content-between align-items-center py-0 pe-2">
           <h6 class="card-title card-padding text-dark h-50">Danh sách trận đấu</h6>
-          <input type="text" name="search" class="form-control h-50 w-75" placeholder="Search" [(ngModel)]="param.key"
+          <input type="text" name="search" class="form-control h-50 w-75" placeholder="Tìm kiếm" [(ngModel)]="param.key"
                  (keyup)="searchData()">
         </div>
         <div class="table-responsive">
@@ -53,8 +53,8 @@
                     }
                   </td>
                   <td class="text-left align-middle">
-                    <button class="btn btn-info" (click)="ticket(u)">Ticket</button>
-                    <button class="btn btn-success mx-2" (click)="update(u)">Update</button>
+                    <button class="btn btn-info" (click)="ticket(u)">Vé</button>
+                    <button class="btn btn-success mx-2" (click)="update(u)">Cập nhật</button>
                   </td>
                 </tr>
               }
